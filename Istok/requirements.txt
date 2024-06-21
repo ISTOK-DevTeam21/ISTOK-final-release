@@ -1,0 +1,22 @@
+# Web framework
+Django
+
+django-filter
+django-phonenumber-field[phonenumberslite]
+Pillow
+
+# Localization
+django-modeltranslation
+
+# Authentication and account management
+django-allauth
+django-allauth[socialaccount]
+
+# Environment variables
+python-dotenv  # file.env with confidential service data
+
+# Code verification tools
+flake8
+flake8-import-order
+flake8_docstrings
+mypy

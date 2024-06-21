@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Products and promotions</title>
+</head>
+<body>
+    <h1>Наши продукты и акции</h1>
+    <form method="GET">
+        <button name="type" value="Кухни">Кухни</button>
+        <button name="type" value="Стеллажи">Стеллажи</button>
+        <button name="type" value="Гардеробные">Гардеробные</button>
+    </form>
+    {% if products %}
+        {% for product in products %}
+            <ul>
+                <li>Название продукта: "{{ product.name }}" | Описание продукта: "{{ product.description }}" </li>
+            </ul>
+        {% endfor %}
+    {% else %}
+        <h3>В данный момент у нас нет подуктов для Вас</h3>
+    {% endif %}
+    <hr>
+    {% if promotions %}
+        {% for promotion in promotions %}
+            <ul>
+                <li>Название акции: "{{ promotion.name }}" | Описание акции: "{{ promotion.description }}"</li>
+            </ul>
+        {% endfor %}
+    {% else %}
+        <h3>В данный момент у нас нет акций для Вас</h3>
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Текущие заказы</h2>
+{% if orders %}
+    <ul>
+    {% for order in orders %}
+        <li>
+            <strong>Номер заказа:</strong> {{ order.order_number }}<br>
+            <strong>Дата:</strong> {{ order.date }}<br>
+            <strong>Адрес доставки:</strong> {{ order.address }}<br>
+            <strong>Общая стоимость:</strong> {{ order.total_price }}<br>
+            <strong>Текущий статус:</strong> {{ order.status }}<br>
+            <a href="{% url 'order_detail' order.pk %}">Детали заказа</a>
+        </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>У вас нет текущих заказов.</p>
+{% endif %}
+{% endblock %}

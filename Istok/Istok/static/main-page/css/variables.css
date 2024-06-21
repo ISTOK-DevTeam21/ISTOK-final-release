@@ -1,0 +1,17 @@
+:root {
+
+    --primary: #97a387;
+    --white: #fff;
+    --dark-primary: #2a254b;
+    --light-grey: #f9f9f9;
+    --dark-grey: #5c6065;
+    --green-primary: #6D9033;
+
+    --font-family: "Montserrat", sans-serif;
+    --font-family-ubuntu: "Ubuntu", sans-serif;
+
+    --container-width: 1280px;
+    --container-offset: 15px;
+
+    --link-transition: 0.3s ease;
+}

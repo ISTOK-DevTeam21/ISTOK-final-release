@@ -1,0 +1,17 @@
+.promo__container {
+    padding-top: 40px;
+}
+
+.promo__details {
+    padding-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.promo__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+}

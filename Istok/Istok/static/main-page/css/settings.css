@@ -1,0 +1,49 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+.page {
+    background-color: #fff;
+}
+
+.page__body {
+    font-family: var(--font-family);
+}
+
+.container {
+    margin: 0 auto;
+    padding: 0 var(--container-offset);
+}
+
+.list-reset {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.button-reset {
+    border: none;
+    padding: 0;
+    background: transparent;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+h1, h2 {
+    font-family: var(--font-family-ubuntu);
+}
+
+h2 {
+    padding-bottom: 20px;
+}

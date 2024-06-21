@@ -1,0 +1,24 @@
+.calculator__container {
+    padding-top: 40px;
+    position: relative;
+}
+
+.calculator__button {
+    position: absolute;
+top: 80%;
+    left: 70%;
+    padding: 10px;
+    border: none;
+    font-weight: 500;
+    font-size: 18px;
+    color: #151515;
+    border-radius: 8px;
+    background-color: #A9B489;
+    align-items: center;
+}
+
+@media (any-hover: hover) {
+    .calculator__button:hover {
+        background: linear-gradient(90deg, #25a46e 0%, #4fc0ac 100%);
+    }
+}

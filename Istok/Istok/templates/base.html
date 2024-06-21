@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My Site{% endblock %}</title>
+</head>
+<body>
+    <header>
+        {% block header %}
+        <!-- Header content goes here -->
+        {% endblock %}
+    </header>
+
+    <nav>
+        {% block nav %}
+        <!-- Navigation content goes here -->
+        {% endblock %}
+    </nav>
+
+    <main>
+        {% block content %}
+        <!-- Main content goes here -->
+        {% endblock %}
+    </main>
+
+    <footer>
+        {% block footer %}
+        <!-- Footer content goes here -->
+        {% endblock %}
+    </footer>
+</body>
+</html>

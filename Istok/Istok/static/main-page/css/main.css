@@ -1,0 +1,16 @@
+@import url("normalize.css");
+@import url("fonts.css");
+@import url("variables.css");
+@import url("settings.css");
+
+@import url("blocks/button.css");
+@import url("blocks/header.css");
+@import url("blocks/hero.css");
+@import url("blocks/about.css");
+@import url("blocks/catalog.css");
+@import url("blocks/promo.css");
+@import url("blocks/calculator.css");
+@import url("blocks/footer.css");
+
+
+

@@ -1,0 +1,35 @@
+footer a {
+    text-decoration: none;
+    color: inherit;
+}
+.footer {
+    line-height: 1.5;
+    background-color: #5E7153;
+}
+
+.footer__container {
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+.footer__details {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer__contact {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.footer__links {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.social-media {
+    display: flex;
+    gap: 20px;
+}

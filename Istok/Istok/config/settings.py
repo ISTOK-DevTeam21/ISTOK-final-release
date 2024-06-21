@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'phonenumber_field',
 
     # Custom apps
+    'main_page',  #added main page app
     'users',
     'catalog',
     'orders',
@@ -75,6 +76,14 @@ TEMPLATES = [
             ],
         },
     },
+]
+
+
+#Add the link to static files from frontend:
+STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
 ]
 
 WSGI_APPLICATION = 'config.wsgi.application'

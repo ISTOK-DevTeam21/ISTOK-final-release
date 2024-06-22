@@ -1,0 +1,88 @@
+.body_calendar {
+    font-family: var(--font-family-ubuntu);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+}
+
+.calendar_container {
+    display: flex;
+    justify-content: space-around;
+    background-color: #fff;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+section {
+    padding: 20px;
+}
+
+.appointment h2 {
+    color: #5E7153;
+    font-size: 48px;
+    font-weight: 700;
+}
+
+.appointment h3 {
+    font-weight: 700;
+    color: #5E7153;
+    font-size: 36px;
+    margin-top: 20px;
+}
+
+.appointment input {
+    width: 100%;
+    padding: 10px;
+    margin: 20px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.specialists {
+    display: flex;
+    flex-direction: column;
+}
+
+.category-button {
+    background-color: #A9B489;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    margin: 5px 0;
+    cursor: pointer;
+    border-radius: 8px;
+    text-align: left;
+}
+
+.specialist-names p {
+    margin: 5px 0;
+}
+
+.calendar {
+    margin-top: 40px;
+    padding: 20px;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calendar-header h2 {
+    margin: 0;
+}
+
+.calendar-input {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 20px;
+}

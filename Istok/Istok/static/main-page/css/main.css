@@ -15,6 +15,11 @@
 @import url("blocks/about_page.css");
 @import url("blocks/registration.css");
 @import url("blocks/login.css");
+@import url("blocks/login_sms.css");
+@import url("blocks/current_order.css");
+@import url("blocks/calendar.css");
+@import url("blocks/order.css");
+
 
 
 

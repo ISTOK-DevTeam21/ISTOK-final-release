@@ -3,18 +3,17 @@ from django.views.generic import View
 from .models import Product, Promotion
 
 
-def product_promotion(request):
+def product_catalog(request):
+    return render(request, 'main-page/catalog.html')
+
+
+def corner_kitchens(request):
     """
-     Представление для показа списков активных акций и списков активных продуктов
+    Представление для показа угловых кухонь
     """
     if request.method == "GET":
-        products = Product.objects.filter(is_catalog=True).order_by('-created_at')
-        promotions = Promotion.objects.filter(is_active=True).order_by('-start_date')
-        product_type = request.GET.get('type')
-        if product_type:
-            products = Product.objects.filter(is_catalog=True, categories__name=product_type).order_by('-created_at')
+        kitchens = Product.objects.filter(is_catalog=True, categories__name='Угловые кухни').order_by('-created_at')
         context = {
-            'products': products,
-            'promotions': promotions,
+            'kitchens': kitchens
         }
-        return render(request, 'main-page/catalog.html', context=context)
+        return render(request, 'main-page/kitchen.html', context=context)

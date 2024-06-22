@@ -119,10 +119,10 @@
                 </div>
                 <div class="footer-nav">
                     <div>
-                        <a href="#"><div class="footer__nav-bold">Главная</div></a>
+                        <a href="{% url 'main_page_index' %}"><div class="footer__nav-bold">Главная</div></a>
                         <ul class="list-reset">
-                            <li><a href="#catalog">Каталог</a></li>
-                            <li><a href="#about">О нас</a></li>
+                            <li><a href="{% url 'prod-catalog' %}">Каталог</a></li>
+                            <li><a href="{% url 'about-us' %}">О нас</a></li>
                             <li><a href="#promo">Акции</a></li>
                             <li><a href="#">Наши работы</a></li>
                             <li><a href="#">Отзывы</a></li>

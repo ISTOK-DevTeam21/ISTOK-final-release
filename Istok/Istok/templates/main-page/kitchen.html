@@ -65,31 +65,39 @@
 
 <section class="kitchen_bottom_block">
 <div class="filters">
-    <div class="filter">
-        <h2>Материал фасада</h2>
-        <label><input type="checkbox"> МДФ + CPL пластик</label>
-        <label><input type="checkbox"> МДФ + ПВХ пленка</label>
-        <label><input type="checkbox"> МДФ + Эмаль</label>
-    </div>
-    <div class="filter">
-        <h2>Материал столешницы</h2>
-        <label><input type="checkbox"> HPL - компакт</label>
-        <label><input type="checkbox"> ДСП</label>
-    </div>
-    <div class="filter">
-        <h2>Материал фартука</h2>
-        <label><input type="checkbox"> ДСП</label>
-    </div>
-    <div class="filter">
-        <h2>Стиль</h2>
-        <label><input type="checkbox"> Классика</label>
-        <label><input type="checkbox"> Минимализм</label>
-        <label><input type="checkbox"> Модерн</label>
-        <label><input type="checkbox"> Скандинавский</label>
-        <label><input type="checkbox"> Простой</label>
-    </div>
+    <form method="get">
+        <div class="filter">
+            <h2>Материал фасада</h2>
+            <label><input type="checkbox"> МДФ + CPL пластик</label>
+            <label><input type="checkbox"> МДФ + ПВХ пленка</label>
+            <label><input type="checkbox"> МДФ + Эмаль</label>
+        </div>
+        <br>
+        <div class="filter">
+            <h2>Материал столешницы</h2>
+            <label><input type="checkbox"> HPL - компакт</label>
+            <label><input type="checkbox"> ДСП</label>
+        </div>
+        <br>
+        <div class="filter">
+            <h2>Материал фартука</h2>
+            <label><input type="checkbox"> ДСП</label>
+        </div>
+        <br>
+        <div class="filter">
+            <h2>Стиль</h2>
+            <label><input type="checkbox"> Классика</label>
+            <label><input type="checkbox"> Минимализм</label>
+            <label><input type="checkbox"> Модерн</label>
+            <label><input type="checkbox"> Скандинавский</label>
+            <label><input type="checkbox"> Простой</label>
+        </div>
+        <br>
+        <div class="filter">
+            <label><input class="about__button" type="submit" value="Фильтровать"></label>
+        </div>
+    </form>
 </div>
-
 <div class="products">
     <div class="product">
         <img src="{% static 'main-page/img/kitchen-1.png' %}" alt="Кухня ISTOK 1" width="400">

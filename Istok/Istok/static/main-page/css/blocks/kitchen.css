@@ -1,0 +1,128 @@
+.kitchen {
+    padding-bottom: 40px;
+}
+
+.kitchen h2 {
+    font-family: var(--font-family-ubuntu);
+    font-weight: 700;
+    font-size: 60px;
+}
+
+.kitchen_container {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.kitchen_block {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.kitchen_text {
+    width: 525px;
+}
+
+.kitchen_bottom_block {
+    display: flex;
+    padding-bottom: 40px;
+}
+
+.kitchen_dot-guarantee {
+    position: absolute;
+    right: 2%;
+    top: 5%;
+}
+
+.kitchen_dot-delivery {
+    position: absolute;
+    right: 2%;
+    top: 27%;
+}
+
+.kitchen_dot-quality {
+    position: absolute;
+    right: 2%;
+    top: 50%;
+}
+
+.filters {
+    width: 30%;
+    font-family: var(--font-family-montserrat-bold);
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    padding-left: 2rem;
+    background-color: #e7ebe7;
+}
+
+.filters h2 {
+    font-family: var(--font-family-montserrat-bold);
+    font-size: 20px;
+}
+
+.filter {
+    flex: 1;
+    margin: 0 1rem;
+}
+
+.filter h2 {
+    margin-bottom: 0.5rem;
+}
+
+.filter label {
+    display: block;
+    margin: 0.5rem 0;
+}
+
+.products {
+    width: 70%;
+    background-color: #e7ebe7;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.product {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 5px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.price_block {
+    display: flex;
+    justify-content: space-around;
+}
+
+.price {
+    font-family: var(--font-family-ubuntu);
+    font-size: 25px;
+    color: #000000;
+}
+
+.price__button {
+    font-family: var(--font-family-montserrat-medium);
+    padding-left: 16px;
+    padding-right: 16px;
+    border-radius: 8px;
+    border: none;
+    font-size: 18px;
+    color: #151515;
+    text-align: center;
+    background-color: #A9B489;
+}
+
+.price__button:hover {
+    background-color: #5a7038;
+}
+

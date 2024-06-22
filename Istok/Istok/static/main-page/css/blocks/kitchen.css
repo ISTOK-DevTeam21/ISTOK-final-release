@@ -90,6 +90,10 @@
     padding-bottom: 2rem;
 }
 
+.product__img {
+    border-radius: 8px !important;
+}
+
 .product {
     display: flex;
     flex-direction: column;
@@ -126,3 +130,19 @@
     background-color: #5a7038;
 }
 
+.price__button, .filter__button {
+    margin-top: 40px;
+}
+
+.filter__button {
+    margin-top: 40px;
+    font-family: var(--font-family-montserrat-medium);
+    padding-left: 16px;
+    padding-right: 16px;
+    border-radius: 8px;
+    border: none;
+    font-size: 18px;
+    color: #151515;
+    text-align: center;
+    background-color: #A9B489;
+}

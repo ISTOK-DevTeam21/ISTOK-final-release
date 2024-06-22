@@ -65,7 +65,7 @@
 
 <section class="kitchen_bottom_block">
 <div class="filters">
-    <form method="get">
+    <form method="get" class="kitchen_form">
         <div class="filter">
             <h2>Материал фасада</h2>
             <label><input type="checkbox"> МДФ + CPL пластик</label>
@@ -92,10 +92,7 @@
             <label><input type="checkbox"> Скандинавский</label>
             <label><input type="checkbox"> Простой</label>
         </div>
-        <br>
-        <div class="filter">
-            <label><input class="about__button" type="submit" value="Фильтровать"></label>
-        </div>
+        <button  class="price__button">Фильтровать</button>
     </form>
 </div>
 <div class="products">
@@ -107,35 +104,35 @@
         </div>
     </div>
     <div class="product">
-        <img src="{% static 'main-page/img/kitchen-2.png' %}" alt="Кухня ISTOK 2" width="400">
+        <img src="{% static 'main-page/img/kitchen-2.png' %}" alt="Кухня ISTOK 2" width="400" class="product__img">
         <div class="price_block">
         <div class="price">126 000 р</div>
         <button  class="price__button">Заказать</button>
         </div>
     </div>
     <div class="product">
-        <img src="{% static 'main-page/img/kitchen-3.png' %}" alt="Кухня ISTOK 3" width="400">
+        <img src="{% static 'main-page/img/kitchen-3.png' %}" alt="Кухня ISTOK 3" width="400" class="product__img">
         <div class="price_block">
         <div class="price">176 000 р</div>
         <button  class="price__button">Заказать</button>
         </div>
     </div>
     <div class="product">
-        <img src="{% static 'main-page/img/kitchen-1.png' %}" alt="Кухня ISTOK 1" width="400">
+        <img src="{% static 'main-page/img/kitchen-1.png' %}" alt="Кухня ISTOK 1" width="400" class="product__img">
         <div class="price_block">
         <div class="price">156 000 р</div>
         <button  class="price__button">Заказать</button>
         </div>
     </div>
     <div class="product">
-        <img src="{% static 'main-page/img/kitchen-2.png' %}" alt="Кухня ISTOK 2" width="400">
+        <img src="{% static 'main-page/img/kitchen-2.png' %}" alt="Кухня ISTOK 2" width="400" class="product__img">
         <div class="price_block">
         <div class="price">126 000 р</div>
         <button  class="price__button">Заказать</button>
         </div>
     </div>
     <div class="product">
-        <img src="{% static 'main-page/img/kitchen-3.png' %}" alt="Кухня ISTOK 3" width="400">
+        <img src="{% static 'main-page/img/kitchen-3.png' %}" alt="Кухня ISTOK 3" width="400" class="product__img">
         <div class="price_block">
         <div class="price">176 000 р</div>
         <button class="price__button">Заказать</button>
@@ -148,7 +145,7 @@
     <div class="container footer__container">
         <div class="footer__details">
             <div class="footer__contact">
-                <img src="{% static 'main-page/img/istok.svg' %}" alt="ISTOK">
+                <img src="{% static 'main-page/img/istok.svg' %}" alt="ISTOK" class="product__img">
                 <p>+7-999-999-99-99</p>
             </div>
             <div class="footer-links">

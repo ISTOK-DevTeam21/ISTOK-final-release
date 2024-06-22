@@ -1,0 +1,52 @@
+
+.registration {
+    height: 100vh;
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.registration img {
+    padding-top: 40px;
+    padding-left: 40px;
+}
+
+.registration_container {
+    border-radius: 16px;
+    width: 622px;
+    background-color: #5E7153;
+    min-height: 538px;
+}
+
+.registration_text {
+    padding-top: 40px;
+    padding-left: 40px;
+    font-family: var(--font-family-ubuntu);
+    font-size: 32px;
+    line-height: 150%;
+    font-weight: 500;
+    color: #FCFCE4;
+}
+
+.registration__buttons {
+    padding-top: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.registration__button {
+    font-family: var(--font-family-montserrat-bold);
+    font-size: 24px;
+    width: 400px;
+}
+
+.sign_up {
+    color: #5E7153;
+    background: #FCFCE4;
+    border-radius: 8px;
+    padding: 16px;
+}

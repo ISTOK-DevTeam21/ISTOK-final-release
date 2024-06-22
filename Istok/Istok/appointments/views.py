@@ -50,7 +50,7 @@ def calendar_view(request):
         'specialists': specialists,
         'appointments_by_day':  appointments_by_day,
     }
-    return render(request, 'appointments/calendar.html', context=context)
+    return render(request, 'main-page/calendar.html', context=context)
 
 
 class UserAppointments(View):

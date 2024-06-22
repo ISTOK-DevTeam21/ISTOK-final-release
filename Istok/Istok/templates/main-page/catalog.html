@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" class="page">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ISTOK</title>
+    <link rel="stylesheet" href="{% static 'main-page/css/main.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body class="page__body">
+    <header class="header">
+        <div class="container header__container">
+            <a href="/Istok/Istok/static">
+                <img src="{% static 'main-page/img/istok.svg' %}" alt="ISTOK logo">
+            </a>
+            <nav class="header__details">
+                <ul class="list-reset header__list">
+                    <li class="header__item">
+                        <a href="#" class="header__link">Каталог</a>
+                    </li>
+                    <li class="header__item">
+                        <a href="#promo" class="header__link">Акции</a>
+                    </li>
+                    <li class="header__item">
+                        <a href="#calculator" class="header__link">Покупателям</a>
+                    </li>
+                    <li class="header__item">
+                        <a href="#" class="header__link">О нас</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header__icons">
+                <a href="#"><img src="{% static 'main-page/img/user-icon.svg' %}" alt="User Icon"></a>
+                <a href="#"><img src="{% static 'main-page/img/chat-icon.svg' %}" alt="Chat Icon"></a>
+            </div>
+            <div class="header__buttons">
+                <button class="header__button">Заказать проект</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+<section id="catalog">
+        <div class="container catalog_page_container">
+            <h2>Каталог</h2>
+            <div class="catalog_page__items">
+                <div class="catalog_page-1">
+                    <div class="">
+                        <a href="#"><img src="img/catalog-1.png" alt="Угловые кухни"></a>
+                        <p class="catalog_page__item-33">Угловые кухни</p>
+                    </div>
+                    <div class="">
+                        <a href="#"><img src="img/catalog-2.png" alt="Прямые кухни"></a>
+                        <p class="catalog_page__item-33">Прямые кухни</p>
+                    </div>
+                    <div class="">
+                        <a href="#"><img src="img/catalog-3.png" alt="П-образные кухни"></a>
+                        <p class="catalog_page__item-33">П-образные кухни</p>
+                    </div>
+                    <div class="">
+                        <a href="#"><img src="img/catalog-4.png" alt="Скрытые кухни"></a>
+                        <p class="catalog_page__item-33">Скрытые кухни</p>
+                    </div>
+                </div>
+                <div class="catalog_page-1">
+                    <div class="">
+                        <a href="#"><img src="img/catalog-5.png" alt="Кухни со стойкой"></a>
+                        <p class="catalog_page__item-33">Кухни со стойкой</p>
+                    </div>
+                    <div class="">
+                        <a href="#"><img src="img/catalog-6.png" alt="Скандинавские кухни"></a>
+                        <p class="catalog_page__item-33">Скандинавские кухни</p>
+                    </div>
+                    <div class="">
+                        <a href="#"><img src="img/catalog-7.png" alt="Классические кухни"></a>
+                        <p class="catalog_page__item-33">Классические кухни</p>
+                    </div>
+                    <div class="">
+                        <a href="#"><img src="img/catalog-8.png" alt="Кухни с островом"></a>
+                        <p class="catalog_page__item-33">Кухни с островом</p>
+                    </div>
+                </div>
+
+                <div class="catalog_page-1">
+                    <div class="">
+                        <a href="#"><img width="1290" src="img/catalog-13.png" alt="Аксессуары"></a>
+                        <p class="catalog_page__item-333">Аксессуары</p>
+                    </div>
+                </div>
+
+                <div class="catalog_page-1">
+                    <div class="">
+                        <a href="#"><img src="img/catalog-9.png" alt="Эклектика"></a>
+                        <p class="catalog_page__item-33">Эклектика</p>
+                    </div>
+                    <div class="">
+                        <a href="#"><img src="img/catalog-10.png" alt="Минимализм"></a>
+                        <p class="catalog_page__item-33">Минимализм</p>
+                    </div>
+                    <div class="">
+                        <a href="#"><img src="img/catalog-11.png" alt="Хай-тек кухни"></a>
+                        <p class="catalog_page__item-33">Хай-тек кухни</p>
+                    </div>
+                    <div class="">
+                        <a href="#"><img src="img/catalog-12.png" alt="Лофт"></a>
+                        <p class="catalog_page__item-33">Лофт</p>
+                    </div>
+                </div>
+        </div>
+    </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer__container">
+            <div class="footer__details">
+                <div class="footer__contact">
+                    <img src="{% static 'main-page/img/istok.svg' %}" alt="ISTOK">
+                    <p>+7-999-999-99-99</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer__nav-bold">Наши соцсети</div>
+                    <div class="social-media">
+                        <a href="#"><img src="{% static 'main-page/img/linkedin.svg' %}" alt="Linkedin"></a>
+                        <a href="#"><img src="{% static 'main-page/img/facebook.svg' %}" alt="Facebook"></a>
+                        <a href="#"><img src="{% static 'main-page/img/instagram.svg' %}" alt="Instagram"></a>
+                        <a href="#"><img src="{% static 'main-page/img/skype.svg' %}" alt="Skype"></a>
+                        <a href="#"><img src="{% static 'main-page/img/twitter.svg' %}" alt="Twitter"></a>
+                        <a href="#"><img src="{% static 'main-page/img/pinterest.svg' %}" alt="Pinterest"></a>
+                    </div>
+                </div>
+                <div class="footer-nav">
+                    <div>
+                        <a href="#"><div class="footer__nav-bold">Главная</div></a>
+                        <ul class="list-reset">
+                            <li><a href="#catalog">Каталог</a></li>
+                            <li><a href="#about">О нас</a></li>
+                            <li><a href="#promo">Акции</a></li>
+                            <li><a href="#">Наши работы</a></li>
+                            <li><a href="#">Отзывы</a></li>
+                            <li><a href="#">Доставка</a></li>
+                            <li><a href="#">Гарантия</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer__nav">
+                    <a href="#catalog"><div class="footer__nav-bold">Категории</div></a>
+                    <ul class="list-reset">
+                        <li><a href="#">Кухни</a></li>
+                        <li><a href="#">Гардеробные</a></li>
+                        <li><a href="#">Стеллажи</a></li>
+                        <li><a href="#">Ванные комнаты</a></li>
+                        <li><a href="#">Комоды</a></li>
+                        <li><a href="#">Мебель в детскую</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__line"></div>
+            <div class="footer_bottom-text">ООО "<span class="footer__nav-semibold">ИСТОК-МЕБЕЛЬ</span>" 2024. Политика конфиденциальности</div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

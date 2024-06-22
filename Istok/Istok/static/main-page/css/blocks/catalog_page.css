@@ -1,0 +1,35 @@
+.catalog_page_container {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.catalog_page__items {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.catalog_page-1 {
+    display: flex;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+
+.catalog_page__item-33 {
+    font-family: var(--font-family-montserrat-bold);
+    color: #fff;
+    font-size: 20px;
+    position: absolute;
+    padding: 20px;
+    top: 75%;
+}
+
+.catalog_page__item-333 {
+    font-family: var(--font-family-montserrat-bold);
+    color: #fff;
+    font-size: 32px;
+    position: absolute;
+    padding: 20px;
+    top: 75%;
+}

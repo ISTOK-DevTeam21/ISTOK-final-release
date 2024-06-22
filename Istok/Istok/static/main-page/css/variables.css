@@ -7,7 +7,12 @@
     --dark-grey: #5c6065;
     --green-primary: #6D9033;
 
-    --font-family: "Montserrat", sans-serif;
+    --font-family-montserrat-regular: "Montserrat Regular", sans-serif;
+    --font-family-montserrat-medium: "Montserrat Medium", sans-serif;
+    --font-family-montserrat-semibold: "Montserrat SemiBold", sans-serif;
+    --font-family-montserrat-bold: "Montserrat Bold", sans-serif;
+    --font-family-montserrat-black: "Montserrat Black", sans-serif;
+
     --font-family-ubuntu: "Ubuntu", sans-serif;
 
     --container-width: 1280px;

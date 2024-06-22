@@ -4,17 +4,17 @@ footer a {
 }
 .footer {
     line-height: 1.5;
-    background-color: #5E7153;
+    background-color: #A9B489;
 }
 
 .footer__container {
-    padding-top: 20px;
-    padding-bottom: 40px;
+    padding-top: 40px;
 }
 
 .footer__details {
     display: flex;
     justify-content: space-between;
+    padding-bottom: 20px;
 }
 
 .footer__contact {
@@ -26,10 +26,27 @@ footer a {
 .footer__links {
     display: flex;
     flex-direction: column;
-    gap: 20px;
 }
 
 .social-media {
     display: flex;
     gap: 20px;
+}
+
+.footer__line {
+    border: 1px solid #000000;
+}
+
+.footer_bottom-text {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.footer__nav-bold {
+    font-family: var(--font-family-montserrat-black);
+    padding-bottom: 5px;
+}
+
+.footer__nav-semibold {
+    font-family: var(--font-family-montserrat-semibold);
 }

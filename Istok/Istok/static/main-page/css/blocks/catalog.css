@@ -20,6 +20,7 @@
 }
 
 .catalog__item-11 {
+    font-family: var(--font-family-montserrat-bold);
     color: #fff;
     font-weight: 700;
     font-size: 24px;
@@ -30,6 +31,7 @@
 
 
 .catalog__item-22 {
+    font-family: var(--font-family-montserrat-bold);
     color: #fff;
     font-weight: 700;
     font-size: 24px;
@@ -46,6 +48,7 @@
     position: relative;
 }
 .catalog__item-33 {
+    font-family: var(--font-family-montserrat-bold);
     color: #fff;
     font-weight: 700;
     font-size: 24px;

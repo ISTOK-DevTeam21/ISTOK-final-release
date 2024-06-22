@@ -4,12 +4,16 @@
     box-sizing: border-box;
 }
 
+p {
+    margin-bottom: 0;
+}
+
 .page {
     background-color: #fff;
 }
 
 .page__body {
-    font-family: var(--font-family);
+    font-family: var(--font-family-montserrat-regular);
 }
 
 .container {

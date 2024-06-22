@@ -21,10 +21,24 @@
     color: #badf95;
 }
 
+.carousel-control-prev {
+    color: #000000;
+}
+
+.carousel-control-next {
+    color: #000000;
+}
+
 .carousel-control-prev-icon {
-    background-image: url("../../img/arrow-left.svg") !important;
+    background-image: url("../../img/arrow-left.svg")!important;
 }
 
 .carousel-control-next-icon {
-    background-image: url("../../img/arrow-right.svg") !important;
+    background-image: url("../../img/arrow-right.svg")!important;
 }
+
+.carousel-item {
+    border-radius: 8px !important;
+    filter:brightness(0.5);
+}
+

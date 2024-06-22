@@ -1,6 +1,7 @@
 .header {
     line-height: 1.5;
     background-color: #5E7153;
+    font-family: var(--font-family-montserrat-bold);
 }
 
 .header__container {
@@ -36,9 +37,9 @@
 }
 
 .header__button {
+    font-family: var(--font-family-montserrat-medium);
     padding: 10px;
-border: none;
-    font-weight: 500;
+    border: none;
     font-size: 18px;
     color: #151515;
     border-radius: 8px;

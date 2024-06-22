@@ -1,6 +1,7 @@
 .about__container {
     padding-top: 40px;
     padding-bottom: 40px;
+    position: relative;
 }
 
 .about__details {
@@ -8,4 +9,28 @@
     justify-content: space-between;
     align-items: center;
     gap: 20px;
+}
+
+.about__text {
+    width: 660px;
+}
+
+.about__button {
+    font-family: var(--font-family-montserrat-medium);
+    position: absolute;
+    top: 80%;
+    padding: 10px;
+    border: none;
+    font-weight: 500;
+    font-size: 18px;
+    color: #151515;
+    border-radius: 8px;
+    background-color: #A9B489;
+    align-items: center;
+}
+
+@media (any-hover: hover) {
+    .about__button:hover {
+        background: linear-gradient(90deg, #25a46e 0%, #4fc0ac 100%);
+    }
 }

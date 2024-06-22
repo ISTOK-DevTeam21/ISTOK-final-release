@@ -1,0 +1,74 @@
+.team {
+    padding-bottom: 40px;
+}
+
+.team h2 {
+    font-family: var(--font-family-ubuntu);
+    font-weight: 700;
+    font-size: 60px;
+}
+
+.team_container {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.team_block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.team_text {
+    width: 525px;
+}
+
+.team_bottom_container {
+    background: #e7ebe7;
+    padding-bottom: 40px;
+    position: relative;
+}
+
+.team_span {
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+.team_text_bottom {
+    margin: auto;
+    padding: 10px;
+    display: flex;
+    text-align: center;
+    width: 467px;
+    border: 1px solid #000000;
+    font-size: 16px;
+}
+
+.team_name {
+    width: 260px;
+    font-size: 20px;
+}
+
+.team_bottom_block {
+    display: flex;
+    justify-content:center;
+    padding-bottom: 40px;
+}
+
+.team_bottom_card {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.green_up {
+    position: absolute;
+    top: 0%;
+    left: 88.5%;
+}
+
+.green_bottom {
+    position: absolute;
+    top: 78.5%;
+    left: 0%;
+}

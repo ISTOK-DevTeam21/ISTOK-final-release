@@ -1,0 +1,91 @@
+
+.login_container {
+    background-color: #5E7153;
+    height: 100vh;
+}
+
+.login img {
+    padding-top: 40px;
+    padding-left: 40px;
+    padding-bottom: 60px;
+}
+
+.login_box {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 16px;
+    width: 622px;
+    background-color: #FCFCE4;
+    gap: 40px;
+    padding-bottom: 40px;
+}
+
+.login_header_text {
+    padding-top: 40px;
+    padding-left: 40px;
+    font-family: var(--font-family-montserrat-medium);
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 100%;
+    color: #5E7153;
+}
+
+.login_text {
+    width: 400px;
+    padding-top: 40px;
+    padding-left: 40px;
+    font-family: var(--font-family-montserrat-medium);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #575757;
+}
+
+.login__buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
+}
+
+.code__button {
+    border: transparent;
+    font-family: var(--font-family-montserrat-bold);
+    font-size: 24px;
+    width: 400px;
+}
+
+.sign_up {
+    color: #FCFCE4;
+    background-color: #A9B489;
+    border-radius: 8px;
+    padding: 16px;
+}
+
+.sign_up__button {
+    border: transparent;
+    background-color: transparent;
+    font-family: var(--font-family-ubuntu);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    color: #797979;
+}
+
+.login__field {
+    border: 3px solid #5E7153;
+    border-radius: 8px;
+    padding: 12px 16px;
+    width: 400px;
+    min-height: 48px;
+    margin: auto;
+}
+
+.login__input {
+    outline: none;
+    background-color: transparent;
+    border: none;
+}

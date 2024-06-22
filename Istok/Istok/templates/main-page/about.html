@@ -18,7 +18,7 @@
             <nav class="header__details">
                 <ul class="list-reset header__list">
                     <li class="header__item">
-                        <a href="{% url 'catalog' %}" class="header__link">Каталог</a>
+                        <a href="{% url 'prod-catalog' %}" class="header__link">Каталог</a>
                     </li>
                     <li class="header__item">
                         <a href="#promo" class="header__link">Акции</a>
@@ -27,7 +27,7 @@
                         <a href="#calculator" class="header__link">Покупателям</a>
                     </li>
                     <li class="header__item">
-                        <a href="{% url 'about' %}" class="header__link">О нас</a>
+                        <a href="{% url 'about-us' %}" class="header__link">О нас</a>
                     </li>
                 </ul>
             </nav>
@@ -53,7 +53,7 @@
                 <br/>
                 Далее, совершенно бесплатно, в вашем присутствии, они разработают проект на основании ими же произведённых замеров помещения в соответствии со всеми вашими пожеланиями.
             </div>
-            <img src="img/team.png" class="team_img" alt="hero" width="450">
+            <img src="{% static 'main-page/img/team.png' %}" class="team_img" alt="hero" width="450">
         </div>
     </div>
     <div class="container team_bottom_container">
@@ -62,14 +62,14 @@
         </div>
         <div class="team_bottom_block">
             <div class="team_bottom_card">
-                <img src="./img/team-1.png" alt="Ген.Директор">
+                <img src="{% static 'main-page/img/team-1.png' %}" alt="Ген.Директор">
                 <div class="team_name">Титов Дмитрий
                     <br>
                     <br>
                     (Ген.Директор)</div>
             </div>
             <div class="team_bottom_card">
-                <img src="./img/team-2.png" alt="Дизайнер">
+                <img src="{% static 'main-page/img/team-2.png' %}" alt="Дизайнер">
                 <div class="team_name">Горшков Никита
                     <br>
                     <br>
@@ -78,22 +78,22 @@
         </div>
         <div class="team_bottom_block">
             <div class="team_bottom_card">
-                <img src="./img/team-3.png" alt="Спец.по обустройству дома)">
+                <img src="{% static 'main-page/img/team-3.png' %}" alt="Спец.по обустройству дома)">
                 <div class="team_name">Джафарова Аида
                     <br>
                     <br>
                     (Спец.по обустройству дома)</div>
             </div>
             <div class="team_bottom_card">
-                <img src="./img/team-4.png" alt="Тех. Директор">
+                <img src="{% static 'main-page/img/team-4.png' %}" alt="Тех. Директор">
                 <div class="team_name">Мороз Дмитрий
                     <br>
                     <br>
                     (Тех. Директор)</div>
             </div>
         </div>
-        <img src="./img/green-up.svg" alt="green_up" class="green_up">
-        <img src="./img/green-bottom.svg" alt="green_bottom" class="green_bottom">
+        <img src="{% static 'main-page/img/green-up.svg' %}" alt="green_up" class="green_up">
+        <img src="{% static 'main-page/img/green-bottom.svg' %}" alt="green_bottom" class="green_bottom">
     </div>
 </section>
 

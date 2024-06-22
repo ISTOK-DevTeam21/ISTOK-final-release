@@ -12,13 +12,13 @@
 <body class="page__body">
     <header class="header">
         <div class="container header__container">
-            <a href="/Istok/Istok/static">
+            <a  href="{% url 'main_page_index' %}">
                 <img src="{% static 'main-page/img/istok.svg' %}" alt="ISTOK logo">
             </a>
             <nav class="header__details">
                 <ul class="list-reset header__list">
                     <li class="header__item">
-                        <a href="#catalog" class="header__link">Каталог</a>
+                        <a href="{% url 'prod-catalog' %}" class="header__link">Каталог</a>
                     </li>
                     <li class="header__item">
                         <a href="#promo" class="header__link">Акции</a>
@@ -27,7 +27,7 @@
                         <a href="#calculator" class="header__link">Покупателям</a>
                     </li>
                     <li class="header__item">
-                        <a href="#" class="header__link">О нас</a>
+                        <a href="{% url 'about-us' %}" class="header__link">О нас</a>
                     </li>
                 </ul>
             </nav>

@@ -1,0 +1,31 @@
+{% load static %}
+<header class="header">
+        <div class="container header__container">
+            <a  href="{% url 'main_page_index' %}">
+                <img src="{% static 'main-page/img/istok.svg' %}" alt="ISTOK logo">
+            </a>
+            <nav class="header__details">
+                <ul class="list-reset header__list">
+                    <li class="header__item">
+                        <a href="{% url 'prod-catalog' %}" class="header__link">Каталог</a>
+                    </li>
+                    <li class="header__item">
+                        <a href="#promo" class="header__link">Акции</a>
+                    </li>
+                    <li class="header__item">
+                        <a href="#calculator" class="header__link">Покупателям</a>
+                    </li>
+                    <li class="header__item">
+                        <a href="{% url 'about-us' %}" class="header__link">О нас</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header__icons">
+                <a href="#"><img src="{% static 'main-page/img/user-icon.svg' %}" alt="User Icon"></a>
+                <a href="#"><img src="{% static 'main-page/img/chat-icon.svg' %}" alt="Chat Icon"></a>
+            </div>
+            <div class="header__buttons">
+                <button class="header__button">Заказать проект</button>
+            </div>
+        </div>
+    </header>

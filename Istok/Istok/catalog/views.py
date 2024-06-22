@@ -12,7 +12,7 @@ def corner_kitchens(request):
     Представление для показа угловых кухонь
     """
     if request.method == "GET":
-        kitchens = Product.objects.filter(is_catalog=True, categories__name='Угловые кухни').order_by('-created_at')
+        kitchens = Product.objects.filter(is_catalog=True, categories__name='Прямые кухни').order_by('-created_at')
         context = {
             'kitchens': kitchens
         }

@@ -12,7 +12,7 @@
 <body class="page__body">
     <header class="header">
         <div class="container header__container">
-            <a href="/Istok/Istok/static">
+            <a href="{% url 'main_page_index' %}">
                 <img src="{% static 'main-page/img/istok.svg' %}" alt="ISTOK logo">
             </a>
             <nav class="header__details">
@@ -27,7 +27,7 @@
                         <a href="#calculator" class="header__link">Покупателям</a>
                     </li>
                     <li class="header__item">
-                        <a href="#" class="header__link">О нас</a>
+                        <a href="{% url 'about-us' %}" class="header__link">О нас</a>
                     </li>
                 </ul>
             </nav>
@@ -48,63 +48,63 @@
             <div class="catalog_page__items">
                 <div class="catalog_page-1">
                     <div class="">
-                        <a href="#"><img src="img/catalog-1.png" alt="Угловые кухни"></a>
+                        <a href="#"><img src="{% static 'main-page/img/catalog-1.png' %}" alt="Угловые кухни"></a>
                         <p class="catalog_page__item-33">Угловые кухни</p>
                     </div>
                     <div class="">
-                        <a href="#"><img src="img/catalog-2.png" alt="Прямые кухни"></a>
+                        <a href="#"><img src="{% static 'main-page/img/catalog-2.png' %}" alt="Прямые кухни"></a>
                         <p class="catalog_page__item-33">Прямые кухни</p>
                     </div>
                     <div class="">
-                        <a href="#"><img src="img/catalog-3.png" alt="П-образные кухни"></a>
+                        <a href="#"><img src="{% static 'main-page/img/catalog-3.png' %}" alt="П-образные кухни"></a>
                         <p class="catalog_page__item-33">П-образные кухни</p>
                     </div>
                     <div class="">
-                        <a href="#"><img src="img/catalog-4.png" alt="Скрытые кухни"></a>
+                        <a href="#"><img src="{% static 'main-page/img/catalog-4.png' %}" alt="Скрытые кухни"></a>
                         <p class="catalog_page__item-33">Скрытые кухни</p>
                     </div>
                 </div>
                 <div class="catalog_page-1">
                     <div class="">
-                        <a href="#"><img src="img/catalog-5.png" alt="Кухни со стойкой"></a>
+                        <a href="#"><img src="{% static 'main-page/img/catalog-5.png' %}" alt="Кухни со стойкой"></a>
                         <p class="catalog_page__item-33">Кухни со стойкой</p>
                     </div>
                     <div class="">
-                        <a href="#"><img src="img/catalog-6.png" alt="Скандинавские кухни"></a>
+                        <a href="#"><img src="{% static 'main-page/img/catalog-6.png' %}" alt="Скандинавские кухни"></a>
                         <p class="catalog_page__item-33">Скандинавские кухни</p>
                     </div>
                     <div class="">
-                        <a href="#"><img src="img/catalog-7.png" alt="Классические кухни"></a>
+                        <a href="#"><img src="{% static 'main-page/img/catalog-7.png' %}" alt="Классические кухни"></a>
                         <p class="catalog_page__item-33">Классические кухни</p>
                     </div>
                     <div class="">
-                        <a href="#"><img src="img/catalog-8.png" alt="Кухни с островом"></a>
+                        <a href="#"><img src="{% static 'main-page/img/catalog-8.png' %}" alt="Кухни с островом"></a>
                         <p class="catalog_page__item-33">Кухни с островом</p>
                     </div>
                 </div>
 
                 <div class="catalog_page-1">
                     <div class="">
-                        <a href="#"><img width="1290" src="img/catalog-13.png" alt="Аксессуары"></a>
+                        <a href="#"><img width="1290" src="{% static 'main-page/img/catalog-13.png' %}" alt="Аксессуары"></a>
                         <p class="catalog_page__item-333">Аксессуары</p>
                     </div>
                 </div>
 
                 <div class="catalog_page-1">
                     <div class="">
-                        <a href="#"><img src="img/catalog-9.png" alt="Эклектика"></a>
+                        <a href="#"><img src="{% static 'main-page/img/catalog-9.png' %}" alt="Эклектика"></a>
                         <p class="catalog_page__item-33">Эклектика</p>
                     </div>
                     <div class="">
-                        <a href="#"><img src="img/catalog-10.png" alt="Минимализм"></a>
+                        <a href="#"><img src="{% static 'main-page/img/catalog-10.png' %}" alt="Минимализм"></a>
                         <p class="catalog_page__item-33">Минимализм</p>
                     </div>
                     <div class="">
-                        <a href="#"><img src="img/catalog-11.png" alt="Хай-тек кухни"></a>
+                        <a href="#"><img src="{% static 'main-page/img/catalog-11.png' %}" alt="Хай-тек кухни"></a>
                         <p class="catalog_page__item-33">Хай-тек кухни</p>
                     </div>
                     <div class="">
-                        <a href="#"><img src="img/catalog-12.png" alt="Лофт"></a>
+                        <a href="#"><img src="{% static 'main-page/img/catalog-12.png' %}" alt="Лофт"></a>
                         <p class="catalog_page__item-33">Лофт</p>
                     </div>
                 </div>

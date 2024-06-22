@@ -3,5 +3,5 @@ from .views import product_promotion
 
 
 urlpatterns = [
-    path('', product_promotion, name='product_promotion_list')
+    path('', product_promotion, name='prod-catalog')
 ]

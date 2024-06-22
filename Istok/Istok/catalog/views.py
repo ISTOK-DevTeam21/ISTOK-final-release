@@ -17,4 +17,4 @@ def product_promotion(request):
             'products': products,
             'promotions': promotions,
         }
-        return render(request, 'catalog/product_promotion_list.html', context=context)
+        return render(request, 'main-page/catalog.html', context=context)

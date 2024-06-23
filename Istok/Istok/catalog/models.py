@@ -67,25 +67,21 @@ class Product(models.Model):
     description = models.TextField(verbose_name=_('Описание'))
     material_facade = models.CharField(max_length=255,
                                        choices=MATERIAL_FACADE,
-                                       unique=True,
                                        default='mdf_cpf_plastic',
                                        verbose_name=_('Материал фасада')
                                        )
     material_table_top = models.CharField(max_length=255,
                                           choices=MATERIAL_TABLE_TOP,
-                                          unique=True,
                                           default='hpl_compact',
                                           verbose_name=_('Материал столешницы')
                                           )
     material_apron = models.CharField(max_length=255,
                                       choices=MATERIAL_APRON,
-                                      unique=True,
                                       default='dsp',
                                       verbose_name=_('Материал фартука')
                                       )
     style = models.CharField(max_length=255,
                              choices=STYLES,
-                             unique=True,
                              default='classic',
                              verbose_name=_('Стиль')
                              )
@@ -115,7 +111,7 @@ class ProductImage(models.Model):
     """
 
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='images', verbose_name=_('Продукт'))
-    image = models.ImageField(upload_to='product_images/', verbose_name=_('Изображение'))
+    image = models.ImageField(upload_to='static/product_images/', verbose_name=_('Изображение'))
 
     class Meta:
         verbose_name = _('Изображение продукта')

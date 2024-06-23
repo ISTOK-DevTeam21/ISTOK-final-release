@@ -91,7 +91,9 @@ class User(AbstractBaseUser, PermissionsMixin):
         verbose_name_plural = _('Пользователи')
 
     def __str__(self):
-        return f"{self.last_name} {self.first_name}"
+        if self.first_name:
+            return f"{self.phone_number} - {self.first_name}"
+        return f"{self.phone_number}"
 
 
 class Room(models.Model):

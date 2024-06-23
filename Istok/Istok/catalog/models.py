@@ -32,6 +32,7 @@ class Product(models.Model):
         material_facade(str): Материал фасада.
         material_table_top(str): Материал столешницы.
         material_apron(str): Материал фартука.
+        style(str): Стиль продукта.
         price (Decimal): Цена продукта.
         categories (Category): Категории, к которым относится продукт.
         is_active (bool): Флаг активности продукта.
@@ -54,6 +55,14 @@ class Product(models.Model):
         ('dsp', _('ДСП'))
     ]
 
+    STYLES = [
+        ('classic', _('Классика')),
+        ('minimalism', _('Минимализм')),
+        ('modern', _('Модерн')),
+        ('scandinavian', _('Скандинавский')),
+        ('simple', _('Простой'))
+    ]
+
     name = models.CharField(max_length=255, verbose_name=_('Название'))
     description = models.TextField(verbose_name=_('Описание'))
     material_facade = models.CharField(max_length=255,
@@ -74,6 +83,12 @@ class Product(models.Model):
                                       default='dsp',
                                       verbose_name=_('Материал фартука')
                                       )
+    style = models.CharField(max_length=255,
+                             choices=STYLES,
+                             unique=True,
+                             default='classic',
+                             verbose_name=_('Стиль')
+                             )
     sketchfab_embed = models.TextField(blank=True, verbose_name=_('Код для встраивания Sketchfab'))
     price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name=_('Цена'))
     categories = models.ManyToManyField(Category, related_name='products', verbose_name=_('Категории'))

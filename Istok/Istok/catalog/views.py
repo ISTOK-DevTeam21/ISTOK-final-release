@@ -18,15 +18,16 @@ def direct_kitchens(request):
         kitchen_material_facade = request.GET.getlist('material_facade', [])
         kitchen_material_table_top = request.GET.getlist('material_table_top', [])
         kitchen_material_apron = request.GET.getlist('material_apron', [])
-        kitchen_category_styles = request.GET.getlist('style', [])
+        kitchen_styles = request.GET.getlist('style', [])
 
-        if kitchen_material_facade or kitchen_material_table_top or kitchen_material_apron or kitchen_category_styles:
+        if kitchen_material_facade or kitchen_material_table_top or kitchen_material_apron or kitchen_styles:
             kitchens = Product.objects.filter(
                 (Q(is_catalog=True) &
                  Q(categories__name='Прямые кухни')) &
                 Q(material_facade__in=kitchen_material_facade) |
                 Q(material_table_top__in=kitchen_material_table_top) |
-                Q(material_apron__in=kitchen_material_apron)
+                Q(material_apron__in=kitchen_material_apron) |
+                Q(style__in=kitchen_styles)
             ).order_by('-created_at')
         context = {
             'kitchens': kitchens

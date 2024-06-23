@@ -17,19 +17,30 @@ def direct_kitchens(request):
     kitchens = Product.objects.filter(is_catalog=True, categories__name='Прямые кухни').order_by('-created_at')
 
     # Get filter parameters from GET request
-    kitchen_material_facade = request.GET.getlist('material_facade', [])
-    kitchen_material_table_top = request.GET.getlist('material_table_top', [])
-    kitchen_material_apron = request.GET.getlist('material_apron', [])
-    kitchen_styles = request.GET.getlist('style', [])
+    kitchen_material_facade = request.GET.getlist('material_facade')
+    kitchen_material_table_top = request.GET.getlist('material_table_top')
+    kitchen_material_apron = request.GET.getlist('material_apron')
+    kitchen_styles = request.GET.getlist('style')
 
-    # Apply filters if any filter parameter is present
-    if kitchen_material_facade or kitchen_material_table_top or kitchen_material_apron or kitchen_styles:
-        kitchens = kitchens.filter(
-            Q(material_facade__in=kitchen_material_facade) |
-            Q(material_table_top__in=kitchen_material_table_top) |
-            Q(material_apron__in=kitchen_material_apron) |
-            Q(style__in=kitchen_styles)
-        ).distinct()
+    # Initialize Q object to build the filter conditions
+    filters = Q()
+
+    # Apply filters only if they are selected
+    if kitchen_material_facade:
+        filters &= Q(material_facade__in=kitchen_material_facade)
+    if kitchen_material_table_top:
+        filters &= Q(material_table_top__in=kitchen_material_table_top)
+    if kitchen_material_apron:
+        filters &= Q(material_apron__in=kitchen_material_apron)
+    if kitchen_styles:
+        filters &= Q(style__in=kitchen_styles)
+
+    # Filter kitchens based on the constructed filters
+    if filters:
+        kitchens = kitchens.filter(filters)
+    else:
+        # If no filters selected, display all kitchens
+        kitchens = kitchens.all()
 
     context = {
         'kitchens': kitchens

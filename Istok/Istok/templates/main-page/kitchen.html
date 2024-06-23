@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 {% load template_filters %}
 {% load static %}
 <html lang="en" class="page">
@@ -19,7 +19,7 @@
             <div class="kitchen_text">
                 Хорошие кухни, реально хорошие.
                 <br>
-                Возьмете не пожалеете! Закажите кухонный гарнитур из каталога готовых решений с возможностью модификации или под заказ по индвидуальному проекту.
+                Возьмете не пожалеете! Закажите кухонный гарнитур из каталога готовых решений с возможностью модификации или под заказ по индивидуальному проекту.
                 <br>
                 <br/>
                 Срок изготовления до 35 дней.
@@ -33,52 +33,55 @@
 </section>
 
 <section class="kitchen_bottom_block">
-<div class="filters">
-    <form method="get" class="kitchen_form">
-        <div class="filter">
-            <h2>Материал фасада</h2>
-            <label><input type="checkbox" name="material_facade"> МДФ + CPL пластик</label>
-            <label><input type="checkbox" name="material_facade"> МДФ + ПВХ пленка</label>
-            <label><input type="checkbox" name="material_facade"> МДФ + Эмаль</label>
-        </div>
-        <br>
-        <div class="filter">
-            <h2>Материал столешницы</h2>
-            <label><input type="checkbox" name="material_table_top"> HPL - компакт</label>
-            <label><input type="checkbox" name="material_table_top"> ДСП</label>
-        </div>
-        <br>
-        <div class="filter">
-            <h2>Материал фартука</h2>
-            <label><input type="checkbox" name="material_apron"> ДСП</label>
-        </div>
-        <br>
-        <div class="filter">
-            <h2>Стиль</h2>
-            <label><input type="checkbox" name="style"> Классика</label>
-            <label><input type="checkbox" name="style"> Минимализм</label>
-            <label><input type="checkbox" name="style"> Модерн</label>
-            <label><input type="checkbox" name="style"> Скандинавский</label>
-            <label><input type="checkbox" name="style"> Простой</label>
-        </div>
-        <button  class="price__button">Фильтровать</button>
-    </form>
-</div>
-{% if kitchens %}
-    {% for k in kitchens %}
-        <div class="products">
-            <div class="product">
-                <img src="{% static 'product_images/{{k|get_img:0}}" alt="Кухня ISTOK" width="400">
-                <div class="price_block">
-                    <div class="price">{{k.price}} р</div>
-                    <button class="price__button">Заказать</button>
+    <div class="filters">
+        <form method="get" class="kitchen_form">
+            <div class="filter">
+                <h2>Материал фасада</h2>
+                <label><input type="checkbox" name="material_facade" value="mdf_cpl_plastic"> МДФ + CPL пластик</label>
+                <label><input type="checkbox" name="material_facade" value="mdf_pvc_film"> МДФ + ПВХ пленка</label>
+                <label><input type="checkbox" name="material_facade" value="mdf_enamel"> МДФ + Эмаль</label>
+            </div>
+            <br>
+            <div class="filter">
+                <h2>Материал столешницы</h2>
+                <label><input type="checkbox" name="material_table_top" value="hpl_compact"> HPL - компакт</label>
+                <label><input type="checkbox" name="material_table_top" value="dsp"> ДСП</label>
+            </div>
+            <br>
+            <div class="filter">
+                <h2>Материал фартука</h2>
+                <label><input type="checkbox" name="material_apron" value="dsp"> ДСП</label>
+            </div>
+            <br>
+            <div class="filter">
+                <h2>Стиль</h2>
+                <label><input type="checkbox" name="style" value="classic"> Классика</label>
+                <label><input type="checkbox" name="style" value="minimalism"> Минимализм</label>
+                <label><input type="checkbox" name="style" value="modern"> Модерн</label>
+                <label><input type="checkbox" name="style" value="scandinavian"> Скандинавский</label>
+                <label><input type="checkbox" name="style" value="simple"> Простой</label>
+            </div>
+            <button class="price__button">Фильтровать</button>
+        </form>
+    </div>
+
+    {% if kitchens %}
+        {% for k in kitchens %}
+            <div class="products">
+                <div class="product">
+                    <img src="{{ k|get_img:0 }}" alt="Кухня ISTOK" width="400">
+                    <div class="price_block">
+                        <div class="price">{{ k.price }} р</div>
+                        <button class="price__button">Заказать</button>
+                    </div>
                 </div>
             </div>
-        </div>
-    {% endfor %}
-{% else %}
-    <h3>В данный момент в наличии нет таких позиций!</h3>
-{% endif %}
+        {% endfor %}
+    {% else %}
+        <h3>В данный момент в наличии нет таких позиций!</h3>
+    {% endif %}
 </section>
+
 {% include "main-page/footer.html" %}
 </body>
+</html>

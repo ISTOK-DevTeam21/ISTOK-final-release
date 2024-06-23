@@ -64,10 +64,9 @@
             <button class="price__button">Фильтровать</button>
         </form>
     </div>
-
-    {% if kitchens %}
-        {% for k in kitchens %}
-            <div class="products">
+    <div class="products">
+        {% if kitchens %}
+            {% for k in kitchens %}
                 <div class="product">
                     <img src="{{ k|get_img:0 }}" alt="Кухня ISTOK" width="400">
                     <div class="price_block">
@@ -75,11 +74,11 @@
                         <button class="price__button">Заказать</button>
                     </div>
                 </div>
-            </div>
-        {% endfor %}
-    {% else %}
-        <h3>В данный момент в наличии нет таких позиций!</h3>
-    {% endif %}
+            {% endfor %}
+        {% else %}
+            <h3>В данный момент в наличии нет таких позиций!</h3>
+        {% endif %}
+    </div>
 </section>
 
 {% include "main-page/footer.html" %}

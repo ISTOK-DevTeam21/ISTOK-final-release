@@ -24,8 +24,14 @@
                 <a href="#"><img src="{% static 'main-page/img/user-icon.svg' %}" alt="User Icon"></a>
                 <a href="#"><img src="{% static 'main-page/img/chat-icon.svg' %}" alt="Chat Icon"></a>
             </div>
-            <div class="header__buttons">
-                <button class="header__button">Заказать проект</button>
-            </div>
+            {% if request.user.is_authenticated %}
+                <div class="header__buttons">
+                    <a href="{% url 'book-appointment' %}" class="header__button">Заказать проект</a>
+                </div>
+            {% else %}
+                <div class="header__buttons">
+                    <a href="#" class="header__button">Заказать проект</a>
+                </div>
+            {% endif %}
         </div>
     </header>

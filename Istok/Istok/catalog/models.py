@@ -29,6 +29,9 @@ class Product(models.Model):
     Attributes:
         name (str): Название продукта.
         description (str): Описание продукта.
+        material_facade(str): Материал фасада.
+        material_table_top(str): Материал столешницы.
+        material_apron(str): Материал фартука.
         price (Decimal): Цена продукта.
         categories (Category): Категории, к которым относится продукт.
         is_active (bool): Флаг активности продукта.
@@ -36,8 +39,41 @@ class Product(models.Model):
         updated_at (DateTime): Дата и время последнего обновления продукта.
     """
 
+    MATERIAL_FACADE = [
+        ('mdf_cpf_plastic', _('МДФ + CPL пластик')),
+        ('mdf_pvx_tape', _('МДФ + ПВХ пленка')),
+        ('mdf_enamel', _('МДФ + Эмаль'))
+    ]
+
+    MATERIAL_TABLE_TOP = [
+        ('hpl_compact', _('HPL - компакт')),
+        ('dsp', _('ДСП'))
+    ]
+
+    MATERIAL_APRON = [
+        ('dsp', _('ДСП'))
+    ]
+
     name = models.CharField(max_length=255, verbose_name=_('Название'))
     description = models.TextField(verbose_name=_('Описание'))
+    material_facade = models.CharField(max_length=255,
+                                       choices=MATERIAL_FACADE,
+                                       unique=True,
+                                       default='mdf_cpf_plastic',
+                                       verbose_name=_('Материал фасада')
+                                       )
+    material_table_top = models.CharField(max_length=255,
+                                          choices=MATERIAL_TABLE_TOP,
+                                          unique=True,
+                                          default='hpl_compact',
+                                          verbose_name=_('Материал столешницы')
+                                          )
+    material_apron = models.CharField(max_length=255,
+                                      choices=MATERIAL_APRON,
+                                      unique=True,
+                                      default='dsp',
+                                      verbose_name=_('Материал фартука')
+                                      )
     sketchfab_embed = models.TextField(blank=True, verbose_name=_('Код для встраивания Sketchfab'))
     price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name=_('Цена'))
     categories = models.ManyToManyField(Category, related_name='products', verbose_name=_('Категории'))

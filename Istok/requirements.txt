@@ -3,6 +3,7 @@ Django
 
 django-filter
 django-phonenumber-field[phonenumberslite]
+django-flatpickr
 Pillow
 
 # Localization

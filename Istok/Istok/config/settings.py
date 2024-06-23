@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'phonenumber_field',
+    'django_flatpickr',
 
     # Custom apps
     'main_page',  #added main page app

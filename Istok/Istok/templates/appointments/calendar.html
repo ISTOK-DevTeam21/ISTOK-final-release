@@ -1,68 +1,121 @@
-<!DOCTYPE html>
-{% load custom_filters %}
-<html>
-<head>
-    <title>Appointment Scheduler</title>
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans 'Календарь встреч' %}{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'flatpickr/flatpickr.min.css' %}">
     <style>
-        .calendar { display: grid; grid-template-columns: repeat(7, 1fr); gap: 5px; }
-        .day { padding: 10px; border: 1px solid #ddd; text-align: center; }
-        .timeslots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; }
-        .timeslot { padding: 5px; cursor: pointer; border: 1px solid #ddd; }
-        .timeslot.booked { color: #ccc; cursor: not-allowed; }
-        .timeslot.selected { background-color: #aaf; }
+        .time-slots-container {
+            margin-top: 20px;
+        }
+        .time-slot {
+            display: block;
+            margin-bottom: 10px;
+            padding: 5px 10px;
+            border: 1px solid #ccc;
+            cursor: pointer;
+        }
     </style>
-</head>
-<body>
-    <h1>Онлайн-запись</h1>
-    <form method="GET">
-        <input type="text" name="q" placeholder="Поиск по ФИО" value="{{ request.GET.q }}">
-        <button type="submit">Поиск</button>
-    </form>
+{% endblock css %}
 
-    <form method="GET">
-        <button name="type" value="Designers">Дизайнеры</button>
-        <button name="type" value="Measurers">Замерщики</button>
-        <button name="type" value="Consultants">Консультанты</button>
-    </form>
-
-    <form method="POST">
-        {% csrf_token %}
-        <label for="specialist">Выбор специалиста:</label>
-        <select name="specialist" id="specialist">
-            {% for specialist in specialists %}
-                <option value="{{ specialist.id }}">{{ specialist.last_name }} {{ specialist.first_name }}</option>
-            {% endfor %}
-        </select>
-        <div class="calendar">
-            {% for day in appointments_by_day %}
-                <div class="day" data-date="{{ day }}">
-                    {{ day }}
-                    <div class="timeslots">
-                        {% for hour in work_time_list %}
-                            {% if appointments_by_day|get_item:day|get_item:hour%}
-                                <div class="timeslot booked">{{ hour }}</div>
-                            {% else %}
-                                <div class="timeslot">{{ hour}}</div>
-                            {% endif %}
-                        {% endfor %}
+{% block content %}
+    <div class="page__body">
+        <main class="body_calendar">
+            <div class="container calendar_container">
+                <section class="appointment">
+                    <h2>Онлайн-запись</h2>
+                    <h3>Выбор специалиста:</h3>
+                    <input type="text" id="search-specialist" name="search-specialist" placeholder="Поиск по ФИО">
+                    <div class="specialists">
+                        <button class="category-button specialist-type" data-type="Designers">Дизайнер</button>
+                        <button class="category-button specialist-type" data-type="Measurers">Замерщик</button>
+                        <button class="category-button specialist-type" data-type="Consultants">Консультант</button>
                     </div>
-                </div>
-            {% endfor %}
-        </div>
-        <input type="hidden" name="date" id="date">
-        <input type="hidden" name="time" id="time">
-        <button type="submit">Записаться</button>
-    </form>
+                </section>
+                <section class="calendar">
+                    <div class="calendar-header">
+                        <h2 id="month-year"></h2>
+                    </div>
+                    <div class="calendar-container">
+                        <input type="text" id="calendar" name="calendar" class="calendar-input">
+                    </div>
+                </section>
 
+                <div class="time-selection">
+                    <div class="time-slots-container">
+                        <h3>Доступное время:</h3>
+                        <div id="time-slots">
+                            <!-- Здесь будут отображаться временные слоты -->
+                        </div>
+                    </div>
+                    <button class="category-button" id="book-appointment">Записаться</button>
+                </div>
+            </div>
+        </main>
+    </div>
+{% endblock content %}
+
+{% block js %}
+    <script src="{% static 'flatpickr/flatpickr.js' %}"></script>
+    <script src="{% static 'flatpickr/l10n/ru.js' %}"></script>
     <script>
-        document.querySelectorAll('.timeslot:not(.booked)').forEach(slot => {
-            slot.addEventListener('click', function() {
-                document.getElementById('date').value = this.parentElement.parentElement.dataset.date;
-                document.getElementById('time').value = this.innerText;
-                document.querySelectorAll('.timeslot.selected').forEach(el => el.classList.remove('selected'));
-                this.classList.add('selected');
+        document.addEventListener('DOMContentLoaded', function () {
+            // Локализация глобально для всех инстансов
+            flatpickr.localize(flatpickr.l10ns.ru);
+
+            // Инициализация Flatpickr
+            flatpickr("#calendar", {
+                locale: "ru",
+                defaultDate: "today",
+                dateFormat: "Y-m-d",
+                inline: true,
+                onChange: function(selectedDates, dateStr, instance) {
+                    fetchAvailableTimeSlots(dateStr);
+                }
             });
         });
+
+        // Функция для загрузки доступных временных слотов
+        function fetchAvailableTimeSlots(dateStr) {
+            const url = `/api/available-time-slots/?date=${dateStr}`;
+            axios.get(url)
+                .then(response => {
+                    const timeSlots = response.data.time_slots;
+                    const timeSlotsHTML = timeSlots.map(slot => `<button class="time-slot">${slot}</button>`).join('');
+                    document.getElementById('time-slots').innerHTML = timeSlotsHTML;
+                })
+                .catch(error => {
+                    console.error('Error fetching time slots:', error);
+                });
+        }
+
+        // Обработчик клика по кнопкам категорий специалистов
+        const specialistTypeButtons = document.querySelectorAll('.specialist-type');
+        specialistTypeButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const specialistType = this.getAttribute('data-type');
+                fetchSpecialists(specialistType);
+            });
+        });
+
+        // Функция для загрузки специалистов по категории
+        function fetchSpecialists(specialistType) {
+            const url = `/api/specialists/?type=${specialistType}`;
+            axios.get(url)
+                .then(response => {
+                    // Обновление списка специалистов
+                })
+                .catch(error => {
+                    console.error('Error fetching specialists:', error);
+                });
+        }
+
+        // Обработчик клика по кнопке "Записаться"
+        const bookAppointmentButton = document.getElementById('book-appointment');
+        bookAppointmentButton.addEventListener('click', function() {
+            // Логика для записи на встречу
+        });
     </script>
-</body>
-</html>
+{% endblock js %}

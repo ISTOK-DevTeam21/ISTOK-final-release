@@ -1,43 +1,93 @@
-{% extends 'base.html' %}
+<!doctype html>
+<html lang="en" class="page">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ISTOK</title>
+    <link rel="stylesheet" href="./css/main.css">
+</head>
 
-{% block title %}Order {{ order.order_number }}{% endblock %}
 
-{% block content %}
-<h1>Order {{ order.order_number }}</h1>
-<p><strong>Status:</strong> {{ order.status }}</p>
-<p><strong>Date:</strong> {{ order.date }}</p>
-<p><strong>Address:</strong> {{ order.address }}</p>
-<p><strong>Phone Number:</strong> {{ order.phone_number }}</p>
-<p><strong>Comment:</strong> {{ order.comment }}</p>
-<p><strong>Delivery Cost:</strong> {{ order.delivery_cost }}</p>
-<p><strong>Installation Cost:</strong> {{ order.installation_cost }}</p>
-<p><strong>Used Points:</strong> {{ order.used_points }}</p>
-<p><strong>Total Price:</strong> {{ order.total_price }}</p>
-
-<h2>Products in Order:</h2>
-<ul>
-    {% for order_product in order.orderproduct_set.all %}
-    <li>
-        <h3>{{ order_product.product.name }}</h3>
-        <p>{{ order_product.product.description }}</p>
-        <p>Price: {{ order_product.product_price }}</p>
-        <p>Quantity: {{ order_product.quantity }}</p>
-        {% if order_product.product.sketchfab_embed %}
-        <div class="sketchfab-embed-wrapper">
-            {{ order_product.product.sketchfab_embed|safe }}
-        </div>
-        {% endif %}
-    </li>
-    {% endfor %}
-</ul>
-
-<h2>Status History:</h2>
-<ul>
-    {% for history in status_history %}
-    <li>
-        <p><strong>Status:</strong> {{ history.status }}</p>
-        <p><strong>Changed at:</strong> {{ history.changed_at }}</p>
-    </li>
-    {% endfor %}
-</ul>
-{% endblock %}
+<body class="current_order">
+<div class="container current_order_container">
+    <aside>
+        <nav>
+            <ul>
+                <li>Главная</li>
+                <li>Текущий заказ</li>
+                <li>История заказов</li>
+                <li>Программа лояльности</li>
+                <li>Доп. информация</li>
+                <li>Профиль</li>
+            </ul>
+        </nav>
+    </aside>
+    <main>
+        <section class="order-details">
+            <h2>Текущий заказ</h2>
+            <div class="order-images">
+                <div class="image-placeholder"></div>
+                <div class="image-placeholder"></div>
+                <div class="image-placeholder"></div>
+                <div class="image-placeholder"></div>
+            </div>
+            <div class="order-description">
+                <p><strong>Описание заказа</strong></p>
+                <p>Спальня “Норди”. Размер 1,75 * 2,20 м.<br>
+                    Дополнительное оборудование: Доводчики 16 шт. Фирма Blum<br>
+                    Адрес доставки: Гор. Санкт-Петербург, ул. Среднерогатская, д. 16, корп. 8, кв. 1257<br>
+                    Дата заключения договора: 01.03.2024 г.<br>
+                    Дата доставки:</p>
+            </div>
+            <button class="online-record">Онлайн - запись</button>
+        </section>
+        <section class="order-timeline">
+            <h2>График выполнения заказа</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <img src="img/preparing-a-sketch.svg" alt="Подготовка эскиза">
+                    <p>Подготовка эскиза</p>
+                    <p>01.03.2024</p>
+                </div>
+                <div class="timeline-item">
+                    <img src="img/waiting.svg" alt="Ожидание тех.замера">
+                    <p>Ожидание тех.замера</p>
+                    <p>15.03.2024</p>
+                </div>
+                <div class="timeline-item">
+                    <img src="img/correction.svg" alt="Корректировка">
+                    <p>Корректировка</p>
+                    <p>01.04.2024</p>
+                </div>
+                <div class="timeline-item">
+                    <img src="img/processing.svg" alt="Обработка">
+                    <p>Обработка</p>
+                    <p>15.04.2024</p>
+                </div>
+                <div class="timeline-item">
+                    <img src="img/production.svg" alt="Производство">
+                    <p>Производство</p>
+                    <p>01.05.2024</p>
+                </div>
+                <div class="timeline-item">
+                    <img src="img/preparation-for-delivery.svg" alt="Подготовка к доставке">
+                    <p>Подготовка к доставке</p>
+                    <p>15.05.2024</p>
+                </div>
+                <div class="timeline-item">
+                    <img src="img/delivery.svg" alt="Доставка">
+                    <p>Доставка</p>
+                    <p>--.--.----</p>
+                </div>
+                <div class="timeline-item">
+                    <img src="img/installation.svg" alt="Установка">
+                    <p>Установка</p>
+                    <p>--.--.----</p>
+                </div>
+            </div>
+            <img class="timeline_img" src="img/graph.svg" alt="График">
+        </section>
+    </main>
+</div>
+</body>

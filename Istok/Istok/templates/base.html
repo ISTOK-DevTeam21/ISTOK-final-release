@@ -1,33 +1,100 @@
+{% load static %}
+{% load i18n %}
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}My Site{% endblock %}</title>
+    <title>{% block title %}{% trans 'ISTOK' %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-    <header>
-        {% block header %}
-        <!-- Header content goes here -->
-        {% endblock %}
+    <header class="header">
+        <div class="container header__container">
+            <a href="{% url 'main_page_index' %}">
+                <img src="{% static 'main-page/img/istok.svg' %}" alt="ISTOK logo">
+            </a>
+            <nav class="header__details">
+                <ul class="list-reset header__list">
+                    <li class="header__item">
+                        <a href="{% url 'prod-catalog' %}" class="header__link">{% trans Каталог %}</a>
+                    </li>
+                    <li class="header__item">
+                        <a href="#promo" class="header__link">{% trans Акции %}</a>
+                    </li>
+                    <li class="header__item">
+                        <a href="#calculator" class="header__link">{% trans Покупателям %}</a>
+                    </li>
+                    <li class="header__item">
+                        <a href="{% url 'about-us' %}" class="header__link">{% trans О нас %}</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header__icons">
+                <a href="#"><img src="{% static 'main-page/img/user-icon.svg' %}" alt="User Icon"></a>
+                <a href="#"><img src="{% static 'main-page/img/chat-icon.svg' %}" alt="Chat Icon"></a>
+            </div>
+            <div class="header__buttons">
+                <button class="header__button">{% trans Заказать проект %}</button>
+            </div>
+        </div>
     </header>
-
-    <nav>
-        {% block nav %}
-        <!-- Navigation content goes here -->
-        {% endblock %}
-    </nav>
-
+    
     <main>
         {% block content %}
-        <!-- Main content goes here -->
         {% endblock %}
     </main>
 
-    <footer>
-        {% block footer %}
-        <!-- Footer content goes here -->
-        {% endblock %}
+    <footer class="footer">
+        <div class="container footer__container">
+            <div class="footer__details">
+                <div class="footer__contact">
+                    <img src="{% static 'main-page/img/istok.svg' %}" alt="ISTOK">
+                    <p>+7-999-999-99-99</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer__nav-bold">Наши соцсети</div>
+                    <div class="social-media">
+                        <a href="#"><img src="{% static 'main-page/img/linkedin.svg' %}" alt="Linkedin"></a>
+                        <a href="#"><img src="{% static 'main-page/img/facebook.svg' %}" alt="Facebook"></a>
+                        <a href="#"><img src="{% static 'main-page/img/instagram.svg' %}" alt="Instagram"></a>
+                        <a href="#"><img src="{% static 'main-page/img/skype.svg' %}" alt="Skype"></a>
+                        <a href="#"><img src="{% static 'main-page/img/twitter.svg' %}" alt="Twitter"></a>
+                        <a href="#"><img src="{% static 'main-page/img/pinterest.svg' %}" alt="Pinterest"></a>
+                    </div>
+                </div>
+                <div class="footer-nav">
+                    <div>
+                        <a href="{% url 'main_page_index' %}"><div class="footer__nav-bold">{% trans Главная %}</div></a>
+                        <ul class="list-reset">
+                            <li><a href="{% url 'prod-catalog' %}">{% trans Каталог %}</a></li>
+                            <li><a href="{% url 'about-us' %}">{% trans О нас %}</a></li>
+                            <li><a href="#promo">{% trans Акции %}</a></li>
+                            <li><a href="#">{% trans Наши работы %}</a></li>
+                            <li><a href="#">{% trans Отзывы %}</a></li>
+                            <li><a href="#">{% trans Доставка %}</a></li>
+                            <li><a href="#">{% trans Гарантия %}</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer__nav">
+                    <a href="#catalog"><div class="footer__nav-bold">{% trans Категории %}</div></a>
+                    <ul class="list-reset">
+                        <li><a href="#">{% trans Кухни %}</a></li>
+                        <li><a href="#">{% trans Гардеробные %}</a></li>
+                        <li><a href="#">{% trans Стеллажи %}</a></li>
+                        <li><a href="#">{% trans Ванные комнаты %}</a></li>
+                        <li><a href="#">{% trans Комоды %}</a></li>
+                        <li><a href="#">{% trans Мебель в детскую %}</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__line"></div>
+            <div class="footer_bottom-text">ООО "<span class="footer__nav-semibold">{% trans ИСТОК-МЕБЕЛЬ %}</span>" <script>document.write(new Date().getFullYear());</script>. {% trans Политика конфиденциальности %}</div>
+        </div>
     </footer>
+    
+    <script src="{% static 'js/main.js' %}"></script>
 </body>
 </html>

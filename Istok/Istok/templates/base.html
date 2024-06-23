@@ -38,11 +38,11 @@
             </div>
             {% if request.user.is_authenticated %}
                 <div class="header__buttons">
-                    <a href="{% url 'book-appointment' %}" class="header__button">Заказать проект</a>
+                    <a href="{% url 'book-appointment' %}" class="header__button">{% trans Заказать проект %}</a>
                 </div>
             {% else %}
                 <div class="header__buttons">
-                    <a href="#" class="header__button">Заказать проект</a>
+                    <a href="#" class="header__button">{% trans Заказать проект %}</a>
                 </div>
             {% endif %}
         </div>

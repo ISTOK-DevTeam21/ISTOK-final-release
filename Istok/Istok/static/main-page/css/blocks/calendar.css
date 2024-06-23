@@ -86,3 +86,29 @@ section {
     text-align: center;
     font-size: 20px;
 }
+
+.time-selection {
+    flex: 1;
+}
+
+.time-slots {
+    margin-top: 150px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+}
+
+.time-slot {
+    background-color: transparent;
+    color: #5E7153;
+    border: 1px solid lightgray;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: calc(33.333% - 10px);
+    text-align: center;
+}
+

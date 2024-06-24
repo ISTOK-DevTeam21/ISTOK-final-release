@@ -45,6 +45,7 @@
     border-radius: 8px;
     background-color: #A9B489;
     align-items: center;
+    text-decoration: none;
 }
 
 @media (any-hover: hover) {

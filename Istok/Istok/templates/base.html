@@ -34,16 +34,16 @@
                 </ul>
             </nav>
             <div class="header__icons">
-                <a href="#"><img src="{% static 'main-page/img/user-icon.svg' %}" alt="User Icon"></a>
+                <a href="{% url 'account_login' %}"><img src="{% static 'main-page/img/user-icon.svg' %}" alt="User Icon"></a>
                 <a href="#"><img src="{% static 'main-page/img/chat-icon.svg' %}" alt="Chat Icon"></a>
             </div>
             {% if request.user.is_authenticated %}
                 <div class="header__buttons">
-                    <a href="{% url 'book-appointment' %}" class="header__button">{% trans Заказать проект %}</a>
+                    <a href="{% url 'book-appointment' %}" class="header__button">{% trans 'Заказать проект' %}</a>
                 </div>
             {% else %}
                 <div class="header__buttons">
-                    <a href="#" class="header__button">{% trans Заказать проект %}</a>
+                    <a href="#" class="header__button">{% trans 'Заказать проект' %}</a>
                 </div>
             {% endif %}
         </div>

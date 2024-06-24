@@ -5,7 +5,7 @@ from .models import Product, Promotion
 
 
 def product_catalog(request):
-    return render(request, 'main-page/catalog.html')
+    return render(request, 'catalog/catalog.html')
 
 
 
@@ -45,4 +45,4 @@ def direct_kitchens(request):
     context = {
         'kitchens': kitchens
     }
-    return render(request, 'main-page/kitchen.html', context=context)
+    return render(request, 'catalog/kitchen.html', context=context)

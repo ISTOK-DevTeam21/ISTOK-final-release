@@ -4,5 +4,5 @@ from django.http import HttpResponse  # или другие необходимы
 
 
 def about_us(request):
-    return render(request, 'main-page/about.html')
+    return render(request, 'about_us/about.html')
 

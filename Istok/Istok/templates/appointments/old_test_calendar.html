@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+{% load custom_filters %}
+<html>
+<head>
+    <title>Appointment Scheduler</title>
+    <style>
+        .calendar { display: grid; grid-template-columns: repeat(7, 1fr); gap: 5px; }
+        .day { padding: 10px; border: 1px solid #ddd; text-align: center; }
+        .timeslots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; }
+        .timeslot { padding: 5px; cursor: pointer; border: 1px solid #ddd; }
+        .timeslot.booked { color: #ccc; cursor: not-allowed; }
+        .timeslot.selected { background-color: #aaf; }
+    </style>
+</head>
+<body>
+    <h1>Онлайн-запись</h1>
+    <form method="GET">
+        <input type="text" name="q" placeholder="Поиск по ФИО" value="{{ request.GET.q }}">
+        <button type="submit">Поиск</button>
+    </form>
+
+    <form method="GET">
+        <button name="type" value="Designers">Дизайнеры</button>
+        <button name="type" value="Measurers">Замерщики</button>
+        <button name="type" value="Consultants">Консультанты</button>
+    </form>
+
+    <form method="POST">
+        {% csrf_token %}
+        <label for="specialist">Выбор специалиста:</label>
+        <select name="specialist" id="specialist">
+            {% for specialist in specialists %}
+                <option value="{{ specialist.id }}">{{ specialist.last_name }} {{ specialist.first_name }}</option>
+            {% endfor %}
+        </select>
+        <div class="calendar">
+            {% for day in appointments_by_day %}
+                <div class="day" data-date="{{ day }}">
+                    {{ day }}
+                    <div class="timeslots">
+                        {% for hour in work_time_list %}
+                            {% if appointments_by_day|get_item:day|get_item:hour%}
+                                <div class="timeslot booked">{{ hour }}</div>
+                            {% else %}
+                                <div class="timeslot">{{ hour}}</div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <input type="hidden" name="date" id="date">
+        <input type="hidden" name="time" id="time">
+        <button type="submit">Записаться</button>
+    </form>
+
+    <script>
+        document.querySelectorAll('.timeslot:not(.booked)').forEach(slot => {
+            slot.addEventListener('click', function() {
+                document.getElementById('date').value = this.parentElement.parentElement.dataset.date;
+                document.getElementById('time').value = this.innerText;
+                document.querySelectorAll('.timeslot.selected').forEach(el => el.classList.remove('selected'));
+                this.classList.add('selected');
+            });
+        });
+    </script>
+</body>
+</html>

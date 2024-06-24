@@ -1,17 +1,18 @@
 <!doctype html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ISTOK</title>
-    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="{% static 'main-page/css/main.css' %}">
 </head>
 <body>
-
-        <section class="login">
-            <div class="container login_container">
-                <img src="img/istok.svg" alt="ISTOK logo">
+    {% include "main-page/header.html" %}
+    <section class="login">
+        <div class="container login_container">
+            <img src="{% static 'main-page/img/istok.svg' %}" alt="ISTOK logo">
             <div class="login_box">
                 <div class="login_header_text">
                     Войти в личный кабинет
@@ -22,15 +23,13 @@
                 <form class="login__field">
                     <input class="login__input" type="text" placeholder="+7(999)999-99-99">
                 </form>
-
                 <div class="login__buttons">
                     <button class="code__button sign_up">Получить код</button>
                     <button class="sign_up__button">Еще нет аккаунта? Зарегистрироваться</button>
                 </div>
             </div>
-            </div>
-        </section>
-
-
+        </div>
+    </section>
+    {% include "main-page/footer.html" %}
 </body>
 </html>

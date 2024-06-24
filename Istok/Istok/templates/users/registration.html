@@ -1,17 +1,18 @@
 <!doctype html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ISTOK</title>
-    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="{% static 'main-page/css/main.css' %}">
 </head>
 <body>
-
+    {% include "main-page/header.html" %}
     <section class="registration">
         <div class="container registration_container">
-            <img src="img/istok.svg" alt="ISTOK logo">
+            <img src="{% static 'main-page/img/istok.svg' %}" alt="ISTOK logo">
             <div class="registration_text">
                 Присоединяйся к нам -
                 <br>
@@ -23,7 +24,6 @@
             </div>
         </div>
     </section>
-
-
+    {% include "main-page/footer.html" %}
 </body>
 </html>

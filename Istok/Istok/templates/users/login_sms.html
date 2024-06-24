@@ -1,41 +1,41 @@
 <!doctype html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ISTOK</title>
-    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="{% static 'main-page/css/main.css' %}">
 </head>
 <body>
+    {% include "main-page/header.html" %}
+    <section class="login">
+        <div class="container login_container">
+            <img src="{% static 'main-page/img/istok.svg' %}" alt="ISTOK logo">
+            <div class="login_box">
+                <div class="login_header_text">
+                    Войти в личный кабинет
+                </div>
+                <div class="login_text">
+                    Мы отправили код на Ваш номер телефона
+                </div>
+                <div class="pin-code">
+                    <input type="number" maxlength="1" autofocus>
+                    <input type="number" maxlength="1">
+                    <input type="number" maxlength="1">
+                    <input type="number" maxlength="1">
+                    <input type="number" maxlength="1">
+                    <input type="number" maxlength="1">
+                </div>
 
-<section class="login">
-    <div class="container login_container">
-        <img src="img/istok.svg" alt="ISTOK logo">
-        <div class="login_box">
-            <div class="login_header_text">
-                Войти в личный кабинет
-            </div>
-            <div class="login_text">
-                Мы отправили код на Ваш номер телефона
-            </div>
-            <div class="pin-code">
-                <input type="number" maxlength="1" autofocus>
-                <input type="number" maxlength="1">
-                <input type="number" maxlength="1">
-                <input type="number" maxlength="1">
-                <input type="number" maxlength="1">
-                <input type="number" maxlength="1">
-            </div>
-
-            <div class="login__buttons">
-                <button class="code__button sign_up">Войти</button>
-                <button class="sign_up__button">Нажимая Войти, вы автоматически соглашаетесь с политикой конфиденциальности сайта</button>
+                <div class="login__buttons">
+                    <button class="code__button sign_up">Войти</button>
+                    <button class="sign_up__button">Нажимая Войти, вы автоматически соглашаетесь с политикой конфиденциальности сайта</button>
+                </div>
             </div>
         </div>
-    </div>
-</section>
-
-
+    </section>
+    {% include "main-page/footer.html" %}
 </body>
 </html>

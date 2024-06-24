@@ -1,35 +1,53 @@
-<!doctype html>
+{% extends "base.html" %}
 {% load static %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>ISTOK</title>
+{% load i18n %}
+
+{% block title %}{% trans 'Вход' %}{% endblock title %}
+
+{% block css %}
     <link rel="stylesheet" href="{% static 'main-page/css/main.css' %}">
-</head>
-<body>
-    {% include "main-page/header.html" %}
-    <section class="login">
-        <div class="container login_container">
-            <img src="{% static 'main-page/img/istok.svg' %}" alt="ISTOK logo">
-            <div class="login_box">
-                <div class="login_header_text">
-                    Войти в личный кабинет
-                </div>
-                <div class="login_text">
-                    Введите номер вашего телефона для получения кода доступа по СМС
-                </div>
-                <form class="login__field">
-                    <input class="login__input" type="text" placeholder="+7(999)999-99-99">
-                </form>
-                <div class="login__buttons">
-                    <button class="code__button sign_up">Получить код</button>
-                    <button class="sign_up__button">Еще нет аккаунта? Зарегистрироваться</button>
-                </div>
+{% endblock css %}
+
+{% block content %}
+<section class="login">
+    <div class="container login_container">
+        <img src="{% static 'main-page/img/istok.svg' %}" alt="ISTOK logo">
+        <div class="login_box">
+            <div class="login_header_text">
+                Войти в личный кабинет
             </div>
+            <div class="login_text">
+                Введите номер вашего телефона и пароль для входа
+            </div>
+            <form method="post" action="{% url 'account_login' %}" class="login__field">
+                {% csrf_token %}
+                {% if form.non_field_errors %}
+                    <div class="alert alert-danger" role="alert">
+                        {{ form.non_field_errors }}
+                    </div>
+                {% endif %}
+                <div class="mb-3">
+                    <input type="text" name="phone" class="login__input" placeholder="+7(999)999-99-99" required>
+                    {% if form.phone.errors %}
+                        <div class="invalid-feedback">
+                            {{ form.phone.errors }}
+                        </div>
+                    {% endif %}
+                </div>
+                <div class="mb-3">
+                    <input type="password" name="password" class="login__input" placeholder="Пароль" required>
+                    {% if form.password.errors %}
+                        <div class="invalid-feedback">
+                            {{ form.password.errors }}
+                        </div>
+                    {% endif %}
+                </div>
+                <div class="login__buttons">
+                    <button type="submit" class="code__button sign_up">Войти</button>
+                    <a href="{% url 'account_signup' %}" class="sign_up__button">Еще нет аккаунта? Зарегистрироваться</a>
+                </div>
+            </form>
         </div>
-    </section>
-    {% include "main-page/footer.html" %}
-</body>
-</html>
+    </div>
+</section>
+{% endblock content %}

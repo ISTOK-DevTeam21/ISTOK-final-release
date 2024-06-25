@@ -29,7 +29,7 @@ class UserManager(BaseUserManager):
         user.save(using=self._db)
         return user
 
-    def create_superuser(self, email, phone_number, password=None, **extra_fields):
+    def create_superuser(self, phone_number, password=None, **extra_fields):
         """
         Создает и сохраняет суперпользователя с заданными email, номером телефона и паролем.
         """
@@ -37,7 +37,8 @@ class UserManager(BaseUserManager):
         extra_fields.setdefault('is_superuser', True)
         extra_fields.setdefault('is_active', True)
 
-        return self.create_user(email, phone_number, password, **extra_fields)
+        return self.create_user(phone_number=phone_number, password=password, **extra_fields)
+
 
 
 class User(AbstractBaseUser, PermissionsMixin):
@@ -96,7 +97,6 @@ class User(AbstractBaseUser, PermissionsMixin):
         if self.first_name:
             return f"{self.phone_number} - {self.first_name}"
         return f"{self.phone_number}"
-
 
 class Room(models.Model):
     """

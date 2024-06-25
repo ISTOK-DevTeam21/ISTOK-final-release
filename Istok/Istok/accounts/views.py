@@ -1,4 +1,4 @@
-from django.contrib.auth import get_user_model, authenticate, login
+from django.contrib.auth import get_user_model, authenticate, login, logout
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
@@ -30,9 +30,12 @@ def login_view(request):
             request.session['password'] = new_password
             print(f'{phone_number_str} {new_password}: ваш пароль для входа на сайт Istok.')
 
+            request.session.save()  # Сохраняем сессию вручную
+
             return redirect('enter_password')  # Переходим ко второму шагу
-        else:
-            return render(request, 'registration/login.html', {'form': form})
+    else:
+        form = PhoneNumberForm()
+    return render(request, 'registration/login.html', {'form': form})
 
     # Обработка GET запроса
     form = PhoneNumberForm()
@@ -91,6 +94,11 @@ def password_view(request):
 
     return render(request, 'registration/login_sms.html', {'form': form})
 
+def logout_view(request):
+    if request.method == 'POST':
+        logout(request)
+        return redirect('login')  # Redirect to the login page or any other page after logging out
+    return render(request, 'registration/logout.html')
 
 class UpdateFirstNameView(LoginRequiredMixin, UpdateView):
     model = User

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "Logout from ISTOK" %}{% endblock title %}
+
+{% block content %}
+    <section class="logout">
+        <div class="container logout_container">
+            <img src="{% static 'main-page/img/istok.svg' %}" alt="ISTOK logo">
+            <div class="logout_box">
+                <div class="logout_header_text">
+                    Вы действительно хотите выйти из личного кабинета?
+                </div>
+                <form method="post" action="{% url 'logout' %}">
+                    {% csrf_token %}
+                    <div class="logout__buttons">
+                        <button type="submit" class="code__button sign_out">Выйти</button>
+                        <a href="{% url 'home' %}" class="code__button cancel">Отмена</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+{% endblock content %}

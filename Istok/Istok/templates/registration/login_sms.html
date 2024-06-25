@@ -15,15 +15,17 @@
             <div class="login_text">
                 Мы отправили код на Ваш номер телефона
             </div>
-            <form class="login__field" method="post" action="{% url 'enter_password' %}">
-                {% csrf_token %}
-                <div class="pin-code">
-{#                    <input type="number" maxlength="1" autofocus>#}
-{#                    <input type="number" maxlength="1">#}
-{#                    <input type="number" maxlength="1">#}
-{#                    <input type="number" maxlength="1">#}
-                </div>
-                {{ form.as_p }}
+            <form method="post" action="{% url 'enter_password' %}">
+                    <div class="login__field">
+                        {% csrf_token %}
+        {#                <div class="pin-code">#}
+        {#                    <input type="number" maxlength="1" autofocus>#}
+        {#                    <input type="number" maxlength="1">#}
+        {#                    <input type="number" maxlength="1">#}
+        {#                    <input type="number" maxlength="1">#}
+        {#                </div>#}
+                        {{ form.as_p }}
+                    </div>
                 <button type="submit" class="code__button sign_up">Войти</button>
                 <button type="button" class="sign_up__button">
                     Нажимая Войти, вы автоматически соглашаетесь с политикой конфиденциальности сайта

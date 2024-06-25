@@ -78,6 +78,7 @@ TEMPLATES = [
     },
 ]
 
+SITE_ID = 1
 
 #Add the link to static files from frontend:
 STATIC_URL = '/static/'
@@ -118,6 +119,10 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+]
+
 AUTH_USER_MODEL = 'users.User'
 
 # Internationalization
@@ -137,5 +142,3 @@ PHONENUMBER_DEFAULT_REGION = 'RU'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-

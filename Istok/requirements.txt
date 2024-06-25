@@ -2,15 +2,14 @@
 Django
 
 django-filter
-django-phonenumber-field[phonenumberslite]
+django-phonenumber-field
+babel
 Pillow
+
+djangorestframework
 
 # Localization
 django-modeltranslation
-
-# Authentication and account management
-django-allauth
-django-allauth[socialaccount]
 
 # Environment variables
 python-dotenv  # file.env with confidential service data

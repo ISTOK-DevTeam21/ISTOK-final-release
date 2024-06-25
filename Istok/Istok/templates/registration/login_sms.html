@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}Войти в личный кабинет - ISTOK{% endblock %}
+
+{% block content %}
+<section class="login">
+    <div class="container login_container">
+        <img src="{% static 'main-page/img/istok.svg' %}" alt="ISTOK logo">
+        <div class="login_box">
+            <div class="login_header_text">
+                Войти в личный кабинет
+            </div>
+            <div class="login_text">
+                Мы отправили код на Ваш номер телефона
+            </div>
+            <form class="login__field" method="post" action="{% url 'enter_password' %}">
+                {% csrf_token %}
+                <div class="pin-code">
+{#                    <input type="number" maxlength="1" autofocus>#}
+{#                    <input type="number" maxlength="1">#}
+{#                    <input type="number" maxlength="1">#}
+{#                    <input type="number" maxlength="1">#}
+                </div>
+                {{ form.as_p }}
+                <button type="submit" class="code__button sign_up">Войти</button>
+                <button type="button" class="sign_up__button">
+                    Нажимая Войти, вы автоматически соглашаетесь с политикой конфиденциальности сайта
+                </button>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock content %}

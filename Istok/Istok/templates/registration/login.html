@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "Login to ISTOK" %}{% endblock title %}
+
+{% block content %}
+    <section class="login">
+        <div class="container login_container">
+            <img src="{% static 'main-page/img/istok.svg' %}" alt="ISTOK logo">
+            <div class="login_box">
+                <div class="login_header_text">
+                    Войти в личный кабинет
+                <form class="login__field" method="post" action="{% url 'login' %}">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+{#                    <input class="login__input" type="text" name="phone" placeholder="+7(999)999-99-99">#}
+                </form>
+                <div class="login__buttons">
+                    <button type="submit" class="code__button sign_up">Получить код</button>
+                    <button class="sign_up__button">Еще нет аккаунта? Зарегистрироваться</button>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock content %}

@@ -17,6 +17,12 @@
     padding: 20px;
 }
 
+.hero_gekkon {
+    position: absolute;
+    top: 50%;
+    left: 70%;
+}
+
 .hero_text_span {
     color: #badf95;
 }
@@ -39,6 +45,5 @@
 
 .carousel-item {
     border-radius: 8px !important;
-    filter:brightness(0.5);
 }
 

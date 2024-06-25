@@ -42,6 +42,10 @@ footer a {
     padding-bottom: 20px;
 }
 
+.footer__nav {
+    font-family: var(--font-family-montserrat-medium);
+}
+
 .footer__nav-bold {
     font-family: var(--font-family-montserrat-black);
     padding-bottom: 5px;

@@ -15,14 +15,17 @@
         <div class="container hero__container">
             <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="{% static 'main-page/img/herohero.jpg' %}" class="d-block w-100" alt="...">
+                    <div class="carousel-item active" style="filter:brightness(0.65)">
+                        <img src="{% static 'main-page/img/herohero1.png' %}" class="d-block w-100" alt="...">
                     </div>
-                    <div class="carousel-item">
-                        <img src="{% static 'main-page/img/herohero.jpg' %}" class="d-block w-100" alt="...">
+                    <div class="carousel-item" style="filter:brightness(1)">
+                        <img src="{% static 'main-page/img/herohero2.png' %}" class="d-block w-100" alt="...">
                     </div>
-                    <div class="carousel-item">
-                        <img src="{% static 'main-page/img/herohero.jpg' %}" class="d-block w-100" alt="...">
+                    <div class="carousel-item" style="filter:brightness(1)">
+                        <img src="{% static 'main-page/img/herohero3.png' %}" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item" style="filter:brightness(1)">
+                        <img src="{% static 'main-page/img/herohero4.png' %}" class="d-block w-100" alt="...">
                     </div>
                 </div>
             </div>
@@ -35,6 +38,9 @@
                 <span class="visually-hidden">{% trans "Next" %}</span>
             </button>
             <h1>{% trans "Почувствуйте" %} <span class="hero_text_span">{% trans "уют" %}</span> {% trans "с нашими новыми" %}<br/> {% trans "кухнями" %}</h1>
+            <div style="position: absolute; left: 75%; top: 15%">
+                <img src="{% static 'main-page/img/gekkon.svg' %}" alt="gekkon">
+            </div>
         </div>
     </section>
 
@@ -67,9 +73,9 @@
             <div class="promo_text-block">
                 <h3>{% trans "Духовка в подарок при покупке кухни" %}</h3>
                 <div class="promo_text-blocks">
-                    <div>{% trans "Давно хотели купить духовку или другую технику, но никак не решались?" %}</div>
-                    <div>{% trans "Так вот если вы приобретаете кухню, в подарок получаете технику на выбор из категории 'подарок'" %}</div>
-                    <div>{% trans "Заинтересовало предложение?" %}</div>
+                    <div style="font-family: var(--font-family-montserrat-regular)">{% trans "Давно хотели купить духовку или другую технику, но никак не решались?" %}</div>
+                    <div style="font-family: var(--font-family-montserrat-regular)">{% trans "Так вот если вы приобретаете кухню, в подарок получаете технику на выбор из категории 'подарок'" %}</div>
+                    <div style="font-family: var(--font-family-montserrat-regular)">{% trans "Заинтересовало предложение?" %}</div>
                 </div>
                 <button class="about__button promo__button">{% trans "Подробнее" %}</button>
             </div>
@@ -78,19 +84,19 @@
                     <a href="#">
                         <img src="{% static 'main-page/img/promo-1.png' %}" alt="{% trans "Акция месяца" %}">
                     </a>
-                    <p>{% trans "Скидки на мебель для спальни" %}</p>
+                    <p style="font-family: var(--font-family-montserrat-medium)">{% trans "Скидки на мебель для спальни" %}</p>
                 </div>
                 <div class="promo__item">
                     <a href="#">
                         <img src="{% static 'main-page/img/promo-2.png' %}" alt="{% trans "Акция месяца" %}">
                     </a>
-                    <p>{% trans "Скидки на кухню" %}</p>
+                    <p style="font-family: var(--font-family-montserrat-medium)">{% trans "Скидки на кухню" %}</p>
                 </div>
                 <div class="promo__item">
                     <a href="#">
                         <img src="{% static 'main-page/img/promo-3.jpg' %}" alt="{% trans "Акция месяца" %}">
                     </a>
-                    <p>{% trans "Скидки на аксессуары" %}</p>
+                    <p style="font-family: var(--font-family-montserrat-medium)">{% trans "Скидки на аксессуары" %}</p>
                 </div>
             </div>
         </div>
@@ -99,7 +105,7 @@
     <section id="calculator" class="calculator">
         <div class="container calculator__container">
             <img src="{% static 'main-page/img/calculator.png' %}" alt="{% trans "Рассчитать стоимость" %}">
-            <button class="calculator__button">{% trans "Рассчитать стоимость кухни" %}</button>
+            <button class="calculator__button" style="font-family: var(--font-family-montserrat-medium)">{% trans "Рассчитать стоимость кухни" %}</button>
         </div>
     </section>
 
@@ -107,9 +113,9 @@
         <div class="container about__container">
             <h2>{% trans "О нас" %}</h2>
             <div class="about__details">
-                <p class="about-text">{% trans "Компания ISTOK — это стартап опытной команды профессионалов. Мы, работая в мебельной индустрии, ощутили разницу в отношении к клиентам и сотрудникам. Объединив свои знания и опыт, мы создали ISTOK — бренд, который понимает, что нужно людям и его сотрудникам." %}</p>
+                <p style="font-family: var(--font-family-montserrat-medium); width: 660px">{% trans "Компания ISTOK — это стартап опытной команды профессионалов. Мы, работая в мебельной индустрии, ощутили разницу в отношении к клиентам и сотрудникам. Объединив свои знания и опыт, мы создали ISTOK — бренд, который понимает, что нужно людям и его сотрудникам." %}</p>
                 <img src="{% static 'main-page/img/about.jpg' %}" width="500" alt="{% trans "О нас" %}">
-                <a href="{% url 'about-us' %}" class="about__button">{% trans "Наша команда" %}</a>
+                <a href="{% url 'about-us' %}" class="about__button" style="text-decoration: none">{% trans "Наша команда" %}</a>
             </div>
         </div>
     </section>

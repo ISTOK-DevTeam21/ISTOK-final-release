@@ -16,12 +16,12 @@
                         <a href="#calculator" class="header__link">Покупателям</a>
                     </li>
                     <li class="header__item">
-                        <a href="{% url 'about-us' %}" class="header__link">О нас</a>
+                        <a href="{% url 'where-we-are' %}" class="header__link">Контакты</a>
                     </li>
                 </ul>
             </nav>
             <div class="header__icons">
-                <a href="#"><img src="{% static 'main-page/img/user-icon.svg' %}" alt="User Icon"></a>
+                <a href="{% url 'current_orders' %}" ><img src="{% static 'main-page/img/user-icon.svg' %}" alt="User Icon"></a>
                 <a href="#"><img src="{% static 'main-page/img/chat-icon.svg' %}" alt="Chat Icon"></a>
             </div>
             {% if request.user.is_authenticated %}
@@ -30,7 +30,7 @@
                 </div>
             {% else %}
                 <div class="header__buttons">
-                    <a href="#" class="header__button">Заказать проект</a>
+                    <a href="{% url 'login' %}" class="header__button">Заказать проект</a>
                 </div>
             {% endif %}
         </div>

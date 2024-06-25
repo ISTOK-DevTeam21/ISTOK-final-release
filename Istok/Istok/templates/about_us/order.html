@@ -1,15 +1,9 @@
-<!doctype html>
-<html lang="en" class="page">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>ISTOK</title>
-    <link rel="stylesheet" href="./css/main.css">
-</head>
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
 
-
-<body class="body_order">
+{% block content %}
+<main>
 <div class="order_container">
     <section class="contact-info">
         <h2>Контакты</h2>
@@ -33,12 +27,12 @@
 
     <section class="map">
         <div class="map-placeholder">
-            <img src="./img/map-placeholder.png" alt="Map">
+            <img src="{% static 'main-page/img/map-placeholder.png' %}" alt="Map Placeholder">
         </div>
     </section>
 </div>
-</body>
+</main>
+{% endblock content %}
 
 
 
-</html>

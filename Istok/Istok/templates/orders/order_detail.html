@@ -4,6 +4,139 @@
 
 {% block title %}{% trans 'Заказ №' %} {{ order.order_number }}{% endblock %}
 
+    {% block css %}
+    <style>
+        .current_order {
+            font-family: var(--font-family-montserrat-semibold);
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .current_order_container {
+            display: flex;
+            width: 100%;
+            min-height: 100vh;
+        }
+
+        .current_order aside {
+            width: 20%;
+            background-color: #F9ECC9;
+            padding: 20px;
+        }
+
+        .current_order nav ul {
+            font-family: var(--font-family-montserrat-bold);
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            list-style: none;
+            padding: 0;
+            font-size: 24px;
+            color: #5E7153;
+        }
+
+        .current_order nav ul li {
+            margin: 20px 0;
+        }
+
+        .current_order main {
+            width: 80%;
+            padding: 40px;
+        }
+
+        .order-details,
+        .order-timeline {
+            margin-bottom: 40px;
+        }
+
+        .order-details h2 {
+            font-family: var(--font-family-montserrat-medium);
+            color: #6b7b59;
+            font-size: 40px;
+        }
+
+        .order-timeline h2 {
+            font-family: var(--font-family-montserrat-bold);
+            color: #6b7b59;
+            font-size: 20px;
+        }
+
+        .order-images {
+            display: flex;
+            gap: 10px;
+        }
+
+        .image-placeholder {
+            width: 100px;
+            height: 100px;
+            background-color: #e0e0e0;
+            border: 1px solid #ccc;
+        }
+
+        .order-description {
+            margin-top: 20px;
+            font-size: 20px;
+            line-height: 150%;
+        }
+
+        .online-record {
+            display: inline-block;
+            margin-left: 20px; /* Adjust as needed */
+            margin-top: 20px;
+            padding: 10px 50px;
+            background-color: #A9B489;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 8px;
+            text-decoration: none; /* Remove underline */
+            text-align: center; /* Center align text */
+            line-height: 1; /* Ensure line height is normal */
+        }
+
+        .online-record:hover {
+            background-color: #8C9B68;
+        }
+
+        .order-timeline {
+            margin-top: 60px;
+        }
+
+        .timeline {
+            margin-top: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .timeline-item {
+            text-align: center;
+            margin: 20px; /* Increase space between timeline items */
+
+        }
+
+        .timeline-item img {
+            width: 50px;
+            height: 50px;
+        }
+
+        .timeline-item p {
+            font-family: var(--font-family-montserrat-regular);
+            margin: 5px 0;
+            font-size: 13px;
+            color: #5E7153;
+            text-align: center;
+
+        }
+
+        .timeline_img {
+            margin-top: 10px;
+            padding-left: 45px;
+        }
+    </style>
+    {% endblock css %}
+
 {% block content %}
 <div class="current_order">
     <div class="container current_order_container">
@@ -12,60 +145,61 @@
             <section class="order-details">
                 <h2>Текущий заказ</h2>
                 <div class="order-images">
-                    <div class="image-placeholder"></div>
-                    <div class="image-placeholder"></div>
-                    <div class="image-placeholder"></div>
-                    <div class="image-placeholder"></div>
+                    <img src="{% static 'main-page/img/catalog-1.png' %}" alt="Image 1" class="order-images">
+                    <img src="{% static 'main-page/img/catalog-2.png' %}" alt="Image 1" class="order-images">
+                    <img src="{% static 'main-page/img/catalog-3.png' %}" alt="Image 1" class="order-images">
+                    <img src="{% static 'main-page/img/catalog-4.png' %}" alt="Image 1" class="order-images">
                 </div>
                 <div class="order-description">
                     <p><strong>Описание заказа</strong></p>
-                    <p>Спальня “Норди”. Размер 1,75 * 2,20 м.<br>
-                        Дополнительное оборудование: Доводчики 16 шт. Фирма Blum<br>
-                        Адрес доставки: Гор. Санкт-Петербург, ул. Среднерогатская, д. 16, корп. 8, кв. 1257<br>
-                        Дата заключения договора: 01.03.2024 г.<br>
+                    <p>Крутые кухни<br>
+                        Дополнительное оборудование: <br>
+                        Адрес доставки: Гор. Санкт-Петербург, Невский пр., д.  23, корп. 8, кв. 1257<br>
+                        Дата заключения договора: 25.06.2024 г. <br>
                         Дата доставки:</p>
                 </div>
-                <button class="online-record">Онлайн - запись</button>
+
+                <a href="{% url 'book-appointment' %}" class="online-record" style="text-decoration: none; text-align: center;">Онлайн - запись</a>
             </section>
             <section class="order-timeline">
                 <h2>График выполнения заказа</h2>
                 <div class="timeline">
-                    <div class="timeline-item">
+                    <div class="timeline-item" style="text-align: center;">
                         <img src="{% static 'main-page/img/preparing-a-sketch.svg' %}" alt="Подготовка эскиза">
                         <p>Подготовка эскиза</p>
-                        <p>01.03.2024</p>
+                        <p>25.06.2024</p>
                     </div>
-                    <div class="timeline-item">
+                    <div class="timeline-item" style="text-align: center;">
                         <img src="{% static 'main-page/img/waiting.svg' %}" alt="Ожидание тех.замера">
                         <p>Ожидание тех.замера</p>
-                        <p>15.03.2024</p>
+                        <p>30.06.2024</p>
                     </div>
-                    <div class="timeline-item">
+                    <div class="timeline-item" style="text-align: center;">
                         <img src="{% static 'main-page/img/correction.svg' %}" alt="Корректировка">
                         <p>Корректировка</p>
-                        <p>01.04.2024</p>
+                        <p>01.07.2024</p>
                     </div>
-                    <div class="timeline-item">
+                    <div class="timeline-item" style="text-align: center;">
                         <img src="{% static 'main-page/img/processing.svg' %}" alt="Обработка">
                         <p>Обработка</p>
-                        <p>15.04.2024</p>
+                        <p>05.07.2024</p>
                     </div>
-                    <div class="timeline-item">
+                    <div class="timeline-item" style="text-align: center;">
                         <img src="{% static 'main-page/img/production.svg' %}" alt="Производство">
                         <p>Производство</p>
-                        <p>01.05.2024</p>
+                        <p>15.07.2024</p>
                     </div>
-                    <div class="timeline-item">
+                    <div class="timeline-item" style="text-align: center;">
                         <img src="{% static 'main-page/img/preparation-for-delivery.svg' %}" alt="Подготовка к доставке">
                         <p>Подготовка к доставке</p>
-                        <p>15.05.2024</p>
+                        <p>01.08.2024</p>
                     </div>
-                    <div class="timeline-item">
+                    <div class="timeline-item" style="text-align: center;">
                         <img src="{% static 'main-page/img/delivery.svg' %}" alt="Доставка">
                         <p>Доставка</p>
                         <p>--.--.----</p>
                     </div>
-                    <div class="timeline-item">
+                    <div class="timeline-item" style="text-align: center;">
                         <img src="{% static 'main-page/img/installation.svg' %}" alt="Установка">
                         <p>Установка</p>
                         <p>--.--.----</p>

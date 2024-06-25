@@ -81,7 +81,13 @@
     border: none;
     cursor: pointer;
     border-radius: 8px;
+    text-decoration: none; /* Remove underline */
+    line-height: 1; /* Ensure line height is normal */
 }
+
+.online-record:hover {
+            background-color: #8C9B68;
+        }
 
 .order-timeline {
     margin-top: 60px;
@@ -99,7 +105,7 @@
 }
 
 .timeline-item img {
-    width: 50px;
+    width: 30px;
     height: 50px;
 }
 

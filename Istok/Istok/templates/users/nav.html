@@ -4,7 +4,7 @@
     <nav>
         <ul>
             <li>{% trans 'Главная' %}</li>
-            <li>{% trans 'Текущий заказ' %}</li>
+            <li href="{% url 'current_orders' %}">{% trans 'Текущий заказ' %}</li>
             <li>{% trans 'История заказов' %}</li>
             <li>{% trans 'Программа лояльности' %}</li>
             <li>{% trans 'Доп. информация' %}</li>

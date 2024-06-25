@@ -28,7 +28,7 @@ def login_view(request):
 
             new_password = get_random_string(length=4, allowed_chars='0123456789')
             request.session['password'] = new_password
-            print(f'{new_password}: ваш пароль для входа на сайт Istok.')
+            print(f'{phone_number_str} {new_password}: ваш пароль для входа на сайт Istok.')
 
             return redirect('enter_password')  # Переходим ко второму шагу
         else:
@@ -44,7 +44,7 @@ def password_view(request):
         new_password = get_random_string(length=4, allowed_chars='0123456789')
         request.session['password'] = new_password
         request.session['attempt_count'] = 0  # Сбрасываем счетчик попыток
-        print(f'{new_password} ваш пароль для входа на сайт Istok.')
+        print(f'{phone_number_str} {new_password} ваш пароль для входа на сайт Istok.')
 
     if 'phone_number' not in request.session:
         return redirect('login')  # Если нет номера телефона в сессии, переходим на первый шаг

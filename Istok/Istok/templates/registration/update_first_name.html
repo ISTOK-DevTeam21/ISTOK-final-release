@@ -1,3 +1,4 @@
+<!-- accounts/templates/registration/update_first_name.html -->
 {% extends 'base.html' %}
 {% load static %}
 {% load i18n %}
@@ -10,15 +11,13 @@
             <img src="{% static 'main-page/img/istok.svg' %}" alt="ISTOK logo">
             <div class="login_box">
                 <div class="login_header_text">
-                    Войти в личный кабинет
-                <form method="post" action="{% url 'login' %}">
+                    Как вас зовут?
+                </div>
+                <form class="login__field" method="post" action="{% url 'account_firstname_update' %}">
                     {% csrf_token %}
-                    <div class="login__field">
-                        {{ form.as_p }}
-    {#                    <input class="login__input" type="text" name="phone" placeholder="+7(999)999-99-99">#}
-                    </div>
+                    {{ form.as_p }}
                     <div class="login__buttons">
-                        <button type="submit" class="code__button sign_up">Получить код</button>
+                        <button type="submit" class="code__button sign_up">Подтвердить</button>
                     </div>
                 </form>
             </div>

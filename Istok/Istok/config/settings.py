@@ -44,6 +44,7 @@ INSTALLED_APPS = [
 
     # Custom apps
     'main_page',  #added main page app
+    'accounts',
     'users',
     'catalog',
     'orders',
@@ -58,6 +59,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'accounts.middleware.EnsureFirstNameMiddleware',
 ]
 
 ROOT_URLCONF = 'config.urls'
@@ -124,6 +126,11 @@ AUTHENTICATION_BACKENDS = [
 ]
 
 AUTH_USER_MODEL = 'users.User'
+
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'current_orders'
+LOGOUT_REDIRECT_URL = 'main_page_index'
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/

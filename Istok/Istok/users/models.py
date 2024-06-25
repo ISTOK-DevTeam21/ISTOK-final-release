@@ -15,14 +15,15 @@ class UserManager(BaseUserManager):
     Предоставляет методы для создания обычных пользователей и суперпользователей.
     """
 
-    def create_user(self, email, phone_number, password=None, **extra_fields):
+    def create_user(self, phone_number, email=None, password=None, **extra_fields):
         """
         Создает и сохраняет обычного пользователя с заданными email, номером телефона и паролем.
         """
         if not phone_number:
             raise ValueError(_('Поле номера телефона должно быть заполнено.'))
 
-        email = self.normalize_email(email)
+        if email:
+            email = self.normalize_email(email)
         user = self.model(email=email, phone_number=phone_number, **extra_fields)
         user.set_password(password)
         user.save(using=self._db)
@@ -51,7 +52,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     ]
 
     email = models.EmailField(null=True, blank=True, unique=True, verbose_name=_('Электронная почта'))
-    first_name = models.CharField(max_length=150, verbose_name=_('Имя'))
+    first_name = models.CharField(null=True, blank=True, max_length=150, verbose_name=_('Имя'))
     last_name = models.CharField(null=True, blank=True, max_length=150, verbose_name=_('Фамилия'))
     patronymic = models.CharField(max_length=150, blank=True, null=True, verbose_name=_('Отчество'))
     birth_date = models.DateField(null=True, blank=True, verbose_name=_('Дата рождения'))
@@ -82,7 +83,8 @@ class User(AbstractBaseUser, PermissionsMixin):
     date_joined = models.DateTimeField(_("Дата регистрации"), default=timezone.now)
 
     USERNAME_FIELD = 'phone_number'
-    REQUIRED_FIELDS = ['email']
+    EMAIL_FIELD = 'email'
+    REQUIRED_FIELDS = []
 
     objects = UserManager()
 

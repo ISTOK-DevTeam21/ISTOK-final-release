@@ -21,7 +21,7 @@ class PhoneNumberForm(forms.Form):
 
 class PasswordForm(forms.Form):
     password = forms.CharField(
-        label=_('Пароль'),
+        label='',
         required=True,
         widget=forms.PasswordInput(attrs={
             'class': 'login__input',
@@ -42,3 +42,15 @@ class SignUpForm(UserCreationForm):
     class Meta:
         model = User
         fields = ('phone_number', 'password1', 'password2')
+
+
+class UpdateFirstNameForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = ['first_name']
+        widgets = {
+            'first_name': forms.TextInput(attrs={'class': 'login__input'}),
+        }
+        labels = {
+            'first_name': '',
+        }
